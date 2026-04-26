@@ -1,0 +1,302 @@
+# Локальные настройки окружения
+.envrc
+.direnv/
+
+# =========================
+# Obsidian
+# =========================
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# =========================
+# OS / Filesystem junk
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Spotlight-V100/
+.Trashes/
+._*
+
+# =========================
+# Logs / runtime temp
+# =========================
+*.log
+*.tmp
+*.temp
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# CMake / C / C++
+# =========================
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+build.ninja
+*.ninja
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+software-architecture/lab-1/AbstractFactory/transport_factory
+software-architecture/lab-2/transport_system
+software-architecture/lab-3/airplane_control
+
+# =========================
+# MSVC / Visual Studio
+# =========================
+.vs/
+*.suo
+*.sdf
+*.VC.db
+*.user
+*.DotSettings.user
+*.csproj.user
+ipch/
+*.pch
+*.idb
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.iobj
+*.ipdb
+*.tlog
+*.dll.recipe
+*.vcxproj.user
+
+# Build output folders (common)
+build/
+bin/
+obj/
+**/Debug/
+**/Release/
+
+# =========================
+# JetBrains IDEs
+# =========================
+.idea/
+*.iml
+
+# =========================
+# Java / Maven
+# =========================
+target/
+*.class
+*.jar
+
+# =========================
+# .NET / Test artifacts
+# =========================
+TestResults/
+packages/
+!packages/repositories.config
+
+# =========================
+# Quartus / EDA artifacts
+# =========================
+*.pof
+*.snf
+*.mmf
+*.scf
+*.sym
+
+# =========================
+# Project-specific generated artifacts
+# =========================
+*_encoded/
+out/
+*.arc
+*.rle
+*.rle_v2
+*.lz77
+*.lz77_v1
+*.lz78
+*.lzw
+*.rle2
+*.dec
+.rle_first_run_done
+information-theory/otik-lab-4/test_environment/output_data/
+
+# =========================
+# Erlang
+# =========================
+*.beam
+erl_crash.du# Локальные настройки окружения
+.envrc
+.direnv/
+
+# =========================
+# Obsidian
+# =========================
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# =========================
+# OS / Filesystem junk
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.Spotlight-V100/
+.Trashes/
+._*
+
+# =========================
+# Logs / runtime temp
+# =========================
+*.log
+*.tmp
+*.temp
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# CMake / C / C++
+# =========================
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+build.ninja
+*.ninja
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+software-architecture/lab-1/AbstractFactory/transport_factory
+software-architecture/lab-2/transport_system
+software-architecture/lab-3/airplane_control
+
+# =========================
+# MSVC / Visual Studio
+# =========================
+.vs/
+*.suo
+*.sdf
+*.VC.db
+*.user
+*.DotSettings.user
+*.csproj.user
+ipch/
+*.pch
+*.idb
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.iobj
+*.ipdb
+*.tlog
+*.dll.recipe
+*.vcxproj.user
+
+# Build output folders (common)
+build/
+bin/
+obj/
+**/Debug/
+**/Release/
+
+# =========================
+# JetBrains IDEs
+# =========================
+.idea/
+*.iml
+
+# =========================
+# Java / Maven
+# =========================
+target/
+*.class
+*.jar
+
+# =========================
+# .NET / Test artifacts
+# =========================
+TestResults/
+packages/
+!packages/repositories.config
+
+# =========================
+# Quartus / EDA artifacts
+# =========================
+*.pof
+*.snf
+*.mmf
+*.scf
+*.sym
+
+# =========================
+# Project-specific generated artifacts
+# =========================
+*_encoded/
+out/
+*.arc
+*.rle
+*.rle_v2
+*.lz77
+*.lz77_v1
+*.lz78
+*.lzw
+*.rle2
+*.dec
+.rle_first_run_done
+information-theory/otik-lab-4/test_environment/output_data/
+
+# =========================
+# Erlang
+# =========================
+*.beam
+erl_crash.dump
+
+# =========================
+# Databases
+# =========================
+
+*.dump
+mp
+
+# =========================
+# Databases
+# =========================
+
+*.dump
