@@ -34,7 +34,7 @@
               # --- C# ---
               dotnet-sdk
               # --- Python ---
-              python3
+              python314
               uv
             ];
             shellHook = ''
