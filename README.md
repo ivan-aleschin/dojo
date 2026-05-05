@@ -2,6 +2,7 @@
 
 ## Структура
 
+```
 dojo/
 ├── pyproject.toml
 ├── README.md
@@ -50,3 +51,4 @@ dojo/
 │   └── 02_todo_api/
 │
 └── playground/             # черновики, эксперименты без тестов
+```
