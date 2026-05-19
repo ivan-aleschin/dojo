@@ -1,5 +1,4 @@
 # Локальные настройки окружения
-.envrc
 .direnv/
 
 # =========================
@@ -143,7 +142,6 @@ information-theory/otik-lab-4/test_environment/output_data/
 # =========================
 *.beam
 erl_crash.du# Локальные настройки окружения
-.envrc
 .direnv/
 
 # =========================
