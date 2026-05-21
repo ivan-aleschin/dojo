@@ -14,14 +14,18 @@
 | Frontend | React + Vite + Mantine v8 + Zustand | Как в bes. |
 | Видео | **LiveKit самостоятельно** (без Matrix-обёртки) | Бэк выдаёт JWT, комната живёт только во время урока. |
 | Whiteboard | **Excalidraw** (self-hosted + collab server) | Open-source, отлично для математики/чертежей. |
-| Файлы / видео-материалы | S3-совместимое (MinIO локально / Yandex Object Storage в проде) | Signed URLs, стриминг. |
+| Файлы / медиа | **Локальная FS** в MVP → S3 (Yandex Object Storage) позже | Через `services/storage.py` абстракцию: переключение env-переменной. |
 | Очереди | Redis + arq | Превью видео, нотификации, бэкапы. |
 | **Чат / мессенджер** | **Matrix (Synapse) + FluffyChat** | Параллельный side-channel, ad-hoc общение учитель↔ученик. **Не часть платформы уроков.** Native iOS app решает проблему push-уведомлений. |
 | Деплой | Docker Compose → Yandex Cloud | По стопам bes. |
 
 **Принципиальное решение по архитектуре:** Matrix — НЕ платформа уроков. Уроки (видео + доска) полностью на сайте (LiveKit + Excalidraw). Matrix живёт сбоку как замена Telegram: учитель и ученик общаются там по жизни. На поздних фазах появится бот, который шлёт системные уведомления в DM-комнату. До бота — учитель пишет вручную.
 
-**Что НЕ делаем:** свой видео-сервер, свой WYSIWYG, микросервисы, мобильное приложение, прокторинг, E2E шифрование в MVP.
+**Что НЕ делаем в MVP:** свой видео-сервер, свой WYSIWYG, микросервисы, мобильное приложение, прокторинг, E2E шифрование, **запись видео уроков** (только снапшот доски + private-заметки учителя), мульти-тенантность (фокус — твой собственный сайт + сайт девушки).
+
+**Storage strategy:** все файлы (материалы, attachments, снапшоты досок) идут через интерфейс `services/storage.py`. MVP-реализация `LocalFileStorage` пишет в `/var/lib/parta/storage/{key}`, выдача — через FastAPI streaming endpoint с auth-проверкой. Реализация `S3Storage` через `aioboto3` — на потом. Переключение env-переменной `STORAGE_BACKEND=local|s3`. Никогда не пишем пути к диску напрямую в сервисах/API.
+
+**Приоритет фаз:** сначала рабочий сайт для тебя и твоей девушки (фазы 1-7). Мульти-тенантность, custom domains, биллинг — фаза 10, только после того как продукт реально работает в боевом использовании у вас двоих.
 
 ---
 
@@ -130,7 +134,6 @@ lesson_sessions
 ├── scheduled_at, started_at, ended_at, duration_min
 ├── status (scheduled|live|completed|cancelled|no_show)
 ├── livekit_room_name           -- "session-{uuid}", создаётся при start
-├── recording_storage_key (nullable)
 ├── tutor_notes_md (private)
 ├── price_snapshot, is_paid, paid_at
 └── cancellation_reason, cancelled_by, cancelled_at
@@ -273,7 +276,7 @@ sequenceDiagram
     actor T as Tutor
     participant B as Backend
     participant LK as LiveKit
-    participant S3 as S3
+    participant FS as Storage
     actor S as Student
 
     Note over T: На календаре виден слот 18:00 Иван
@@ -283,7 +286,7 @@ sequenceDiagram
     B->>LK: ensure room "session-{uuid}"
     B-->>T: JWT + room_name + whiteboard_id
     T->>LK: join room
-    T->>S3: load whiteboard initial state (или blank)
+    T->>FS: load whiteboard initial state (или blank)
 
     Note over S: На странице ученика кнопка "Войти"<br/>активна с -15min до +30min от scheduled_at
     S->>B: GET /lessons/active
@@ -294,14 +297,13 @@ sequenceDiagram
     S->>LK: join room
 
     Note over T,S: ... урок: видео + общая доска ...
-    Note over T,S: Excalidraw collab server держит state<br/>периодический autosave в S3
+    Note over T,S: Excalidraw collab server держит state<br/>периодический autosave в storage
 
     T->>B: POST /lessons/{id}/end (whiteboard_json)
-    B->>S3: save final whiteboard snapshot
-    B->>B: fan-out: для каждого participant создать<br/>whiteboards row (kind=lesson_snapshot)
-    B->>LK: stop recording
-    LK-->>B: recording_storage_key
-    B->>B: update lesson_session(ended_at, recording_key)
+    B->>FS: save final whiteboard snapshot
+    B->>B: fan-out: каждому participant создать<br/>whiteboards row (kind=lesson_snapshot)
+    B->>LK: room teardown (без записи)
+    B->>B: update lesson_session(ended_at)
     B-->>T: post-lesson modal (выдать ДЗ?)
 
     T->>B: POST /homework (students=[ivan], body, due_at)
@@ -338,9 +340,9 @@ sequenceDiagram
 │ 📋   │                                                           │
 │      │  Прошлые уроки                                            │
 │      │  ┌─────────────────────────────────────────────────────┐  │
-│      │  │ 21.05  Алгебра    Анна    [запись] [доска] [заметки│  │
-│      │  │ 19.05  Алгебра    Анна    [запись] [доска]         │  │
-│      │  │ 16.05  Физика     Анна    [запись] [доска]         │  │
+│      │  │ 21.05  Алгебра    Анна    [доска] [заметки уч-ля]   │  │
+│      │  │ 19.05  Алгебра    Анна    [доска]                   │  │
+│      │  │ 16.05  Физика     Анна    [доска]                   │  │
 │      │  └─────────────────────────────────────────────────────┘  │
 │      │                                                           │
 │      │  Мои доски                              [+ Новая личная] │
@@ -459,8 +461,8 @@ sequenceDiagram
 │  ДЗ сдано: 5/6          Тестов пройдено: 3 (ср. 87%)            │
 │                                                                  │
 │  Прошлые уроки (всё что было)                                    │
-│  · 21.05  Алгебра   60 мин   [запись] [доска] [мои заметки]     │
-│  · 19.05  Алгебра   60 мин   [запись] [доска]                   │
+│  · 21.05  Алгебра   60 мин   [доска] [мои заметки]              │
+│  · 19.05  Алгебра   60 мин   [доска]                            │
 │  ...                                                             │
 │                                                                  │
 │  Activity feed                                                   │
@@ -540,7 +542,7 @@ def create_lesson_token(lesson_id: str, user_id: str, role: str) -> str:
 
 - Бэк выдаёт JWT при `POST /lessons/{id}/join`.
 - Frontend `<LiveKitRoom token={token}>` подключается напрямую к LiveKit серверу.
-- Запись (recording) — отдельный egress-сервис LiveKit пишет в S3.
+- **Запись урока не делаем** — только финальный снапшот доски + private-заметки учителя (см. секцию 14).
 - Идентификатор комнаты = `session-{lesson_id}`, нет коллизий, легко grep'ать логи.
 
 ---
@@ -552,9 +554,9 @@ def create_lesson_token(lesson_id: str, user_id: str, role: str) -> str:
 - При входе в `LessonRoomPage`:
   - Подключение к `excalidraw-room` с room ID = `lesson-{lesson_id}`.
   - Загрузка initial state из S3 (если есть) или blank.
-- Autosave: каждые 30с → `PUT /api/whiteboards/autosave/{lesson_id}` → S3.
+- Autosave: каждые 30с → `PUT /api/whiteboards/autosave/{lesson_id}` → storage (через абстракцию).
 - Завершение урока → final save → fan-out copy в whiteboards каждого participant.
-- В workspace ученика: открытие старой доски → загрузка из S3, доска **locked=true** (read-only).
+- В workspace ученика: открытие старой доски → загрузка из storage, доска **locked=true** (read-only).
 
 **Личные scratch-доски** — отдельный whiteboard (`kind=personal_scratch`, `source_lesson_id=null`). Не привязан к уроку. Ученик может рисовать когда угодно.
 
@@ -610,7 +612,8 @@ def evaluate_cancellation(
 ### Фаза 0 — Setup (1-2 дня)
 - [ ] Склонировать структуру bes как стартовый шаблон
 - [ ] Почистить от slab/static
-- [ ] Поднять Postgres, Redis, MinIO в docker-compose
+- [ ] Поднять Postgres + Redis (или Valkey — pure FOSS) в docker-compose
+- [ ] Создать `/var/lib/parta/storage/` для локального хранилища + `services/storage.py` с интерфейсом `Storage` и реализацией `LocalFileStorage`
 - [ ] Базовый CI (ruff + mypy + pytest)
 
 ### Фаза 1 — Auth и пользователи (1 неделя)
@@ -637,7 +640,7 @@ def evaluate_cancellation(
 - [ ] LiveKit интеграция + JWT-токены (`services/livekit.py`)
 - [ ] LessonRoomPage: видео-сайдбар + Excalidraw canvas
 - [ ] Excalidraw collab сервер
-- [ ] Поток start → join → end + **fan-out снапшотов доски + recording**
+- [ ] Поток start → join → end + **fan-out снапшотов доски** участникам (без видео-записи)
 - [ ] Сигнал "урок live" через polling
 - [ ] Правило отмен (`packages/cancellation_rules/`)
 
@@ -680,12 +683,11 @@ def evaluate_cancellation(
 
 ## 13. Открытые вопросы (решим когда дойдём)
 
-1. **Запись уроков** — нужна по умолчанию или per-lesson флаг? Юридически: согласие родителей обязательно. Хранение записей: 30/60/90 дней?
-2. **Lesson presets** UI — какой минимум фич нужен на старте.
-3. **WebSocket vs polling для сигнала "урок live"** — переход с polling на WS когда нагрузка вырастет.
-4. **Запись (transcription)** — нужно ли whisper/yandex speechkit для текстовых summary уроков? AI-фича для подписки.
-5. **AI-генерация тестов** — задел в схеме (есть `tests`), но скрипт генерации — отдельная задача.
-6. **Юр.лицо** — для биллинга нужна ИП. Решаем перед фазой 10.
+1. **Lesson presets** UI — какой минимум фич нужен на старте для удобства сбора групп.
+2. **WebSocket vs polling для сигнала "урок live"** — переход с polling на WS когда нагрузка вырастет.
+3. **AI-генерация тестов** — задел в схеме (есть `tests`), но скрипт генерации — отдельная задача.
+4. **Бэкапы локального storage** — `borgbackup` на отдельный VPS / Yandex Object Storage как cold-backup destination. Настроить до боевого использования.
+5. **Юр.лицо** — для биллинга нужна ИП. Решаем перед фазой 10.
 
 ---
 
@@ -697,6 +699,9 @@ def evaluate_cancellation(
 - Микросервисы — монолит на FastAPI.
 - E2E шифрование уроков/чата — TLS достаточно.
 - Прокторинг тестов — не нужен для репетиторства.
-- Лишние интерфейсы для учителя — workspace ученика тот же что у самого ученика, плюс edit-панель.
+- Лишние интерфейсы для учителя — workspace ученика тот же что у ученика, плюс edit-панель.
+- **Запись видео уроков** — снапшот доски + private-заметки учителя дают 95% ценности. Без юр.заморочек с согласием родителей и без терабайтов видео на диске.
+- **S3/MinIO в MVP** — локальная FS через `services/storage.py`. S3 включим когда будут платящие клиенты.
+- **Мульти-тенантность в MVP** — focus first ship: твой сайт + сайт девушки. Остальное в фазе 10.
 
 Принцип: каждое "своё" решение должно быть оправдано тем, что готовых нет или они дороже.
