@@ -542,7 +542,7 @@ def create_lesson_token(lesson_id: str, user_id: str, role: str) -> str:
 
 - Бэк выдаёт JWT при `POST /lessons/{id}/join`.
 - Frontend `<LiveKitRoom token={token}>` подключается напрямую к LiveKit серверу.
-- **Запись урока не делаем** — только финальный снапшот доски + private-заметки учителя (см. секцию 14).
+- **Запись урока не делаем** — только финальный снапшот доски + private-заметки учителя (см. секцию 15).
 - Идентификатор комнаты = `session-{lesson_id}`, нет коллизий, легко grep'ать логи.
 
 ---
@@ -557,6 +557,8 @@ def create_lesson_token(lesson_id: str, user_id: str, role: str) -> str:
 - Autosave: каждые 30с → `PUT /api/whiteboards/autosave/{lesson_id}` → storage (через абстракцию).
 - Завершение урока → final save → fan-out copy в whiteboards каждого participant.
 - В workspace ученика: открытие старой доски → загрузка из storage, доска **locked=true** (read-only).
+
+**Почему не tldraw:** с tldraw SDK 4.0 (сентябрь 2025) commercial license — $6k/год за команду. Hobby license дискреционная, под подписочный продукт не выдадут. Excalidraw MIT — никаких лицензионных ограничений, self-host без условий.
 
 **Личные scratch-доски** — отдельный whiteboard (`kind=personal_scratch`, `source_lesson_id=null`). Не привязан к уроку. Ученик может рисовать когда угодно.
 
@@ -593,7 +595,50 @@ def evaluate_cancellation(
 
 ---
 
-## 11. Подписочная модель (для шага "продавать другим репетиторам")
+## 11. Google Calendar интеграция (фазы)
+
+Поэтапный подход: локальный → односторонний write → двусторонний sync. Каждый шаг — incremental, без переписывания.
+
+**Отвергнутые варианты:**
+- **iCal subscription (ICS feed):** Google рефрешит подписки раз в 12-24ч, контролировать нельзя — троттлинг на стороне Google. Не годится для оперативного отображения изменений.
+- **CalDAV:** с февраля 2025 Google CalDAV — read-only. Писать в Google через CalDAV нельзя.
+
+### Фаза 0 — локальный календарь (MVP)
+Свой UI на FullCalendar.js, события в `lesson_sessions` / `calendar_events`. Никакой внешней интеграции. Source of truth — БД сайта.
+
+### Фаза A — односторонняя запись в Google (после MVP, ~3-5 дней)
+- Tutor один раз даёт OAuth-доступ → бэк хранит refresh token в `google_calendar_credentials(tutor_id, refresh_token, calendar_id)`.
+- Сайт остаётся source of truth. При create/update/delete урока — бэк дёргает `events.insert/patch/delete` через Google Calendar API.
+- Изменения в Google появляются за 1-2 секунды.
+- One-time backfill при первом подключении: идемпотентный `sync_all_lessons_to_google(tutor_id)`.
+- Минус: правки в Google → на сайте не подхватятся. Tutor должен править на сайте.
+
+### Фаза B — двусторонняя синхронизация (опционально, при росте, +1.5-2 недели)
+- Google → сайт через **push notifications** (`events.watch` + webhook `/webhooks/google-calendar`).
+- Sync tokens для инкрементальной выгрузки (`syncToken` в `events.list`).
+- Watch channels гаснут раз в 7 дней → arq job на renewal раз в 6 дней.
+- Periodic full sync на случай дропа уведомлений (Google docs: "not 100% reliable").
+- **Conflict resolution policy** — решать когда дойдём. Дефолт: last-write-wins по `updated_at`, либо "сайт всегда побеждает для уроков, Google — для generic блоков".
+
+### Что заложить в фазе 0 чтобы A/B встроились без переписывания
+
+1. **Сервисный слой как единая точка.** Все мутации календаря/уроков — через `services/calendar.py` и `services/lessons.py`, НИКОГДА из API напрямую в repo. Тогда добавление Google в фазе A — +1 строка внутри сервиса:
+   ```python
+   def create_lesson(...):
+       lesson = repo.create(...)
+       google_sync.maybe_push(lesson)  # no-op если tutor не подключил Google
+       return lesson
+   ```
+2. **Поле `google_event_id` nullable** в `lesson_sessions` и `calendar_events` с самого начала. Ноль усилий сейчас, избавляет от миграции на больших данных потом.
+3. **Таймзоны явно.** `users.timezone` (IANA: `Europe/Moscow`). В БД — UTC. Конвертация только на границе API. Google API строго требует RFC3339 с tz — если намешаешь naive datetime, в фазе A будет день переписывания.
+4. **Идемпотентный `google_sync.push_lesson(lesson)`** с первого дня фазы A: если `google_event_id` стоит — update, иначе insert. Один код работает и для новых уроков, и для backfill старых.
+
+### Чего НЕ делать заранее
+- НЕ писать абстрактный `CalendarProvider` интерфейс с `LocalProvider`/`GoogleProvider` "на будущее". Один провайдер локально, один Google потом — две строчки кода, не паттерн. Premature abstraction только усложнит чтение.
+
+---
+
+## 12. Подписочная модель (для шага "продавать другим репетиторам")
 
 - **Tenancy:** shared DB + `tutor_id` фильтр в каждом запросе. Простейший вариант. Application-level фильтр через middleware.
 - **Schema-per-tenant** или отдельная БД — НЕ сейчас, только если будут крупные клиенты с регуляторными требованиями.
@@ -607,7 +652,7 @@ def evaluate_cancellation(
 
 ---
 
-## 12. Дорожная карта по фазам
+## 13. Дорожная карта по фазам
 
 ### Фаза 0 — Setup (1-2 дня)
 - [ ] Склонировать структуру bes как стартовый шаблон
@@ -661,6 +706,13 @@ def evaluate_cancellation(
 - [ ] Help/docs (Typst как в bes)
 - [ ] Performance: lazy-loading изображений досок, virtualized lists
 
+### Фаза 7.5 — Google Calendar односторонняя, фаза A (1 неделя) **← опционально**
+- [ ] OAuth flow для подключения Google Calendar
+- [ ] `services/google_calendar.py`: `events.insert/patch/delete` через API
+- [ ] Идемпотентный backfill старых уроков при первом подключении
+- [ ] Маппинг `lesson_id ↔ google_event_id` (поле заложено в фазе 0)
+- [ ] См. §11 фаза A
+
 ### Фаза 8 — Matrix интеграция (1 неделя) **← опционально, после MVP**
 - [ ] Synapse OIDC delegation
 - [ ] Auto-provisioning matrix-юзеров при создании ученика
@@ -679,9 +731,16 @@ def evaluate_cancellation(
 - [ ] Admin-панель для тебя
 - [ ] Переезд на отдельный `tutor.домен` Synapse
 
+### Фаза 11 — Google Calendar двусторонняя, фаза B (1.5-2 недели) **← опционально, при росте**
+- [ ] Push notifications через `events.watch`
+- [ ] Webhook `/webhooks/google-calendar`
+- [ ] Sync tokens + arq renewal job (раз в 6 дней)
+- [ ] Conflict resolution policy
+- [ ] См. §11 фаза B
+
 ---
 
-## 13. Открытые вопросы (решим когда дойдём)
+## 14. Открытые вопросы (решим когда дойдём)
 
 1. **Lesson presets** UI — какой минимум фич нужен на старте для удобства сбора групп.
 2. **WebSocket vs polling для сигнала "урок live"** — переход с polling на WS когда нагрузка вырастет.
@@ -691,7 +750,7 @@ def evaluate_cancellation(
 
 ---
 
-## 14. Что НЕ делать в MVP
+## 15. Что НЕ делать в MVP
 
 - Свой видео-сервер — LiveKit готов.
 - Свой WYSIWYG — TipTap/MDXEditor готовы.
@@ -703,5 +762,7 @@ def evaluate_cancellation(
 - **Запись видео уроков** — снапшот доски + private-заметки учителя дают 95% ценности. Без юр.заморочек с согласием родителей и без терабайтов видео на диске.
 - **S3/MinIO в MVP** — локальная FS через `services/storage.py`. S3 включим когда будут платящие клиенты.
 - **Мульти-тенантность в MVP** — focus first ship: твой сайт + сайт девушки. Остальное в фазе 10.
+- **Google Calendar в MVP** — только локальный календарь. Внешняя синхронизация — фаза A после фазы 7 (см. §11). iCal subscription отвергнут (24ч рефреш), CalDAV отвергнут (read-only с фев. 2025).
+- **tldraw** — отвергнут: с SDK 4.0 commercial license $6k/год. Используем Excalidraw (MIT).
 
 Принцип: каждое "своё" решение должно быть оправдано тем, что готовых нет или они дороже.
