@@ -1,160 +1,166 @@
-# DAILY_PLAN — подготовка по дням (старт 20 июля 2026, Пн)
+# DAILY_PLAN — подготовка по дням (старт 17 августа 2026, Пн)
 
-Формат дня и чек-листы итогов — в `PREP_PLAN.md`. Здесь — что именно делать каждый день.
-`(E)` = easy, `(M)` = medium, `[stretch]` = по желанию, если осталось время.
-Задачи ищи по названию на LeetCode или бери у меня в репо — я готовлю стабы.
+Формат дня и чек-листы — в `PREP_PLAN.md`. Здесь — что именно делать каждый день.
+`(E)` = easy, `(M)` = medium, `[stretch]` = если осталось время.
+Задачи беру у меня в репо (готовлю стабы) или по названию на LeetCode.
 
-Каждая задача: сначала уточнения → идея и `O()` вслух → код → доктест → разбор со мной.
+Каждая задача: уточнения → идея и `O()` вслух → код → доктест → разбор со мной.
+
+**Объём дня — 4–5 задач за ~2.5 ч**, разбито на «окна» между проверками агентов на `almanako`.
+Не 6, как в прошлой версии плана: 6 не влезает в реальный ритм и приводит к срыву.
 
 ---
 
-## Фаза 1 — Фундамент паттернов (20 июля → 4 августа)
+## Фаза 0 — Спринт под экзамен Т-Банка (17 → 30 августа)
 
-### Неделя 1
+Цель фазы: закрыть 10 паттернов за 14 дней и войти в экзамен 31.08 в форме.
+Backtracking и DP сознательно вынесены в сентябрь — на отборочных они встречаются реже.
 
-**День 1 — Пн 20.07 · Two Pointers · 6 задач**
-Python: срезы, два индекса, `while left < right`.
-1. Two Sum II (sorted) (E) — *эталон уже в репо*
-2. Valid Palindrome (E) — *твоя первая задача*
-3. Reverse String (E)
-4. Remove Duplicates from Sorted Array (E)
-5. Squares of a Sorted Array (E)
-6. Container With Most Water (M)
+### Неделя 1 (17–23 августа)
 
-**День 2 — Вт 21.07 · Sliding Window · 6 задач**
-Python: `dict`/`Counter`, `set`, движущееся окно.
-1. Maximum Average Subarray I (E)
-2. Contains Duplicate II (E)
-3. Longest Substring Without Repeating Characters (M)
-4. Minimum Size Subarray Sum (M)
-5. Max Consecutive Ones III (M)
-6. Longest Repeating Character Replacement (M)
-
-**День 3 — Ср 22.07 · Hash Map / Set · 6 задач**
-Python: `defaultdict`, `Counter`, `set`.
+**День 1 — Пн 17.08 · Hash Map / Set · 5 задач**
+Python: `dict`, `set`, `defaultdict`, `Counter`.
 1. Two Sum (E)
 2. Contains Duplicate (E)
 3. Valid Anagram (E)
 4. Group Anagrams (M)
-5. Top K Frequent Elements (M)
-6. Longest Consecutive Sequence (M)
+5. Longest Consecutive Sequence (M)
 
-**День 4 — Чт 23.07 · Binary Search · 6 задач**
+**День 2 — Вт 18.08 · Two Pointers · 5 задач**
+Python: срезы, два индекса, `while left < right`.
+1. Two Sum II (sorted) (E) — *эталон уже в репо*
+2. Valid Palindrome (E) — *стаб уже в репо*
+3. Remove Duplicates from Sorted Array (E)
+4. Squares of a Sorted Array (E)
+5. Container With Most Water (M)
+
+**День 3 — Ср 19.08 · Sliding Window · 5 задач**
+Python: движущееся окно, `Counter` внутри окна.
+1. Maximum Average Subarray I (E)
+2. Contains Duplicate II (E)
+3. Longest Substring Without Repeating Characters (M)
+4. Minimum Size Subarray Sum (M)
+5. Longest Repeating Character Replacement (M)
+
+**День 4 — Чт 20.08 · Binary Search · 5 задач**
 Python: `bisect`, инвариант `[lo, hi]`.
 1. Binary Search (E)
 2. Search Insert Position (E)
-3. First Bad Version (E)
-4. Find First and Last Position of Element (M)
-5. Search in Rotated Sorted Array (M)
-6. Koko Eating Bananas (M) — бинпоиск по ответу
+3. Find First and Last Position of Element (M)
+4. Search in Rotated Sorted Array (M)
+5. Koko Eating Bananas (M) — бинпоиск по ответу
 
-**День 5 — Пт 24.07 · Stack / Monotonic Stack · 6 задач**
+**День 5 — Пт 21.08 · Stack / Monotonic Stack · 5 задач**
 Python: `list` как стек, монотонный стек.
 1. Valid Parentheses (E)
 2. Next Greater Element I (E)
 3. Min Stack (M)
 4. Evaluate Reverse Polish Notation (M)
 5. Daily Temperatures (M) — монотонный стек
-6. Car Fleet (M) [stretch]
 
-**День 6 — Сб 25.07 · СИМУЛЯЦИЯ #1 · 5 задач за раз (~2.5 ч)**
+**День 6 — Сб 22.08 · СИМУЛЯЦИЯ #1 · 5 задач за раз (~2.5 ч)**
 Режим контеста: 5 смешанных задач по паттернам 1–5, без подсказок, засекаешь время.
-Потом разбор со мной: что затормозило, какие паттерны просели.
+Разбор: что затормозило, какие паттерны просели.
 
-**День 7 — Вс 26.07 · Разгрузка · ~4 задачи (1–1.5 ч)**
-Добираем 2 самых слабых паттерна недели. Остальное — отдых/велик.
+**День 7 — Вс 23.08 · Разгрузка · ~3 задачи (1–1.5 ч)**
+Добираем 2 самых слабых паттерна недели. Остальное — отдых.
 
-### Неделя 2
+### Неделя 2 (24–30 августа)
 
-**День 8 — Пн 27.07 · Fast & Slow Pointers + связные списки · 6 задач**
-Python: класс `ListNode`, dummy-узел.
-1. Reverse Linked List (E)
-2. Middle of the Linked List (E)
-3. Linked List Cycle (E)
-4. Happy Number (E)
-5. Remove Nth Node From End of List (M)
-6. Palindrome Linked List (M)
-
-**День 9 — Вт 28.07 · Деревья BFS/DFS · 7 задач**
-Python: рекурсия, `deque` для BFS.
-1. Maximum Depth of Binary Tree (E)
-2. Invert Binary Tree (E)
-3. Same Tree (E)
-4. Diameter of Binary Tree (E)
-5. Binary Tree Level Order Traversal (M)
-6. Validate Binary Search Tree (M)
-7. Lowest Common Ancestor of a BST (M)
-
-**День 10 — Ср 29.07 · Графы BFS/DFS · 6 задач**
-Python: список смежности, `visited`-множество, `deque`.
-1. Flood Fill (E)
-2. Number of Islands (M)
-3. Rotting Oranges (M)
-4. Clone Graph (M)
-5. Course Schedule (M) — топосортировка
-6. Pacific Atlantic Water Flow (M) [stretch]
-
-**День 11 — Чт 30.07 · Heap / Top-K · 5 задач**
-Python: `heapq`, кортежи в куче.
-1. Last Stone Weight (E)
-2. Kth Largest Element in an Array (M)
-3. Top K Frequent Elements — теперь через кучу (M)
-4. K Closest Points to Origin (M)
-5. Merge k Sorted Lists (H) [stretch]
-
-**День 12 — Пт 31.07 · Prefix Sums / Intervals · 6 задач**
-Python: массив префиксов, сортировка интервалов.
+**День 8 — Пн 24.08 · Prefix Sums / Intervals · 5 задач**
+Python: массив префиксов, сортировка интервалов по `key=`.
 1. Running Sum of 1d Array (E)
 2. Find Pivot Index (E)
 3. Subarray Sum Equals K (M) — префиксы + хеш
 4. Merge Intervals (M)
 5. Insert Interval (M)
-6. Non-overlapping Intervals (M)
 
-**День 13 — Сб 01.08 · СИМУЛЯЦИЯ #2 · полный контест (до 5 ч)**
-Боевые условия: 5 задач, до 5 часов, как реальный стажёрский контест. Разбор.
+**День 9 — Вт 25.08 · Fast & Slow Pointers + связные списки · 5 задач**
+Python: класс `ListNode`, dummy-узел.
+1. Reverse Linked List (E)
+2. Middle of the Linked List (E) — *уже решал в `coderun/0001`*
+3. Linked List Cycle (E)
+4. Remove Nth Node From End of List (M)
+5. Palindrome Linked List (M)
 
-**День 14 — Вс 02.08 · Разгрузка · ~4 задачи**
-Добор слабого. Отдых.
+**День 10 — Ср 26.08 · Деревья BFS/DFS · 5 задач**
+Python: рекурсия, `deque` для BFS.
+1. Maximum Depth of Binary Tree (E)
+2. Invert Binary Tree (E)
+3. Diameter of Binary Tree (E)
+4. Binary Tree Level Order Traversal (M)
+5. Validate Binary Search Tree (M)
 
-### Неделя 3 (добиваем 2 паттерна + переход к собесам)
+**День 11 — Чт 27.08 · Графы BFS/DFS · 5 задач**
+Python: список смежности, `visited`, `deque`.
+1. Flood Fill (E)
+2. Number of Islands (M)
+3. Rotting Oranges (M)
+4. Clone Graph (M)
+5. Course Schedule (M) — топосортировка
 
-**День 15 — Пн 03.08 · Backtracking · 6 задач**
-Python: рекурсия «выбрал → откатил».
-1. Subsets (M)
-2. Combination Sum (M)
-3. Permutations (M)
-4. Generate Parentheses (M)
-5. Letter Combinations of a Phone Number (M)
-6. Word Search (M)
+**День 12 — Пт 28.08 · Heap / Top-K · 4 задачи**
+Python: `heapq`, кортежи в куче.
+1. Last Stone Weight (E)
+2. Kth Largest Element in an Array (M)
+3. Top K Frequent Elements — теперь через кучу (M)
+4. K Closest Points to Origin (M)
 
-**День 16 — Вт 04.08 · Динамика (база) · 6 задач**
-Python: мемоизация (`dict`) и табуляция.
-1. Climbing Stairs (E)
-2. Min Cost Climbing Stairs (E)
-3. House Robber (M)
-4. Coin Change (M)
-5. Longest Increasing Subsequence (M)
-6. Unique Paths (M)
+**День 13 — Сб 29.08 · СИМУЛЯЦИЯ #2 · боевой контест (до 4 ч)**
+5 задач в условиях реального отборочного. Разбор — это репетиция экзамена Т-Банка.
 
-> ✅ К 4 августа: все 11 паттернов закрыты, ~90 задач решено. Ты **готов к контесту**.
+**День 14 — Вс 30.08 · Добор слабого + отдых**
+Только то, что просело на симуляции. Вечером — не заниматься, выспаться.
+
+> ✅ К 30 августа: 10 паттернов закрыты, ~60 задач решено. Готов к отборочному экзамену.
 
 ---
 
-## Фаза 2 — Собеседования (5 августа → начало сентября)
+## Экзамен — 31 августа → 6 сентября
 
-**Ср 05.08 — открываешь реальные контесты** (Т-Банк / МТС), проходишь **сам**. Дальше — режим собесов.
+Анкета + отборочный экзамен Т-Старта. В эти дни:
+- Новых паттернов **не берём.** Только повторение конспектов и 2 задачи в день, чтобы не остыть.
+- 5 сентября кончается max-подписка → последний рывок по `almanako`, дальше режим меняется.
 
-Дневной шаблон (будни, ~2.5–3 ч):
-- 1 **mock-собес** со мной: 2 задачи в «блокноте» без запуска (как в Яндексе), я интервьюер.
-- 2–3 **medium** на самые слабые паттерны.
-- Раз в неделю (Сб) — симуляция/полный mock; Вс — разгрузка.
+- [ ] Анкета Т-Банк подана
+- [ ] Анкета МТС Старт подана
+- [ ] Анкета Авито подана (зимний набор, старт в ноябре)
+- [ ] Анкета Яндекса подана — **контест НЕ открывать** (окно 7 дней запускаешь сам, откроем в октябре)
+- [ ] Экзамен Т-Банка пройден
 
-Добираем продвинутые подтемы по мере надобности: Дейкстра, Union-Find, Trie, 2D-динамика,
-сложные интервалы. Параллельно — живые секции компаний (даты выбираешь сам) и заявка в Сбер.
+---
 
-**Цель к началу сентября:** medium за 30–35 мин стабильно, ~130–150 задач суммарно,
-старт стажировки → справка для МИЭТ.
+## Фаза 1 — Сентябрь: добор тем + mock-собесы
+
+Учебный год начался: пн/вт/пт заняты весь день, чт — военка, сб — пары.
+**Свободны: среда, вечера, воскресенье.** Объём падает до ~1.5–2 ч в будни.
+
+**Ср 02.09 и далее по средам** — большой блок (3–4 ч), это главный учебный день недели.
+
+Темы сентября, по одной в неделю:
+1. **Неделя 1** — Backtracking: Subsets, Combination Sum, Permutations, Generate Parentheses, Word Search
+2. **Неделя 2** — DP база: Climbing Stairs, House Robber, Coin Change, LIS, Unique Paths
+3. **Неделя 3** — Продвинутое: Дейкстра, Union-Find, Trie, 2D-динамика
+4. **Неделя 4** — Только mock-собесы + добор слабого
+
+Параллельно весь сентябрь:
+- [ ] Mock-собес со мной раз в неделю (суббота или воскресенье): 2 задачи в блокноте без запуска
+- [ ] Оформление практики на кафедру + предупредить Роальдовича про смену в октябре
+- [ ] Собрать рассказ про архитектуру `almanako` на 10 минут (чек-лист в `PREP_PLAN.md` §8)
+- [ ] Решить вопрос с публичной ссылкой на код (зеркало или README-витрина)
+
+---
+
+## Фаза 2 — Октябрь: технические секции и финалы
+
+Дневной режим тот же. Фокус смещается с новых задач на **разговорную форму**:
+проговаривать решение вслух, задавать уточняющие вопросы, объяснять сложность.
+
+**Начало октября — открываем контест Яндекса.** К этому моменту пройдены все 11 паттернов,
+две симуляции и месяц mock-собесов — только тогда, не раньше. Окно 7 дней запускаешь ты сам.
+
+**20 октября — контрольная точка.** Офферов нет → в тот же день запускаем рассылку
+по малым компаниям из списка ОРИОКС (`PREP_PLAN.md` §2). Вход туда — неделя.
 
 ---
 
@@ -162,9 +168,10 @@ Python: мемоизация (`dict`) и табуляция.
 
 | Блок | Задач |
 |---|---|
-| 12 паттерн-дней × ~6 | ~72 |
-| 2 симуляции × 5 | ~10 |
-| 2 разгрузки × ~4 | ~8 |
-| **Итого к 4 августа** | **~90** |
-| Фаза 2 (август, mock + medium) | +50–60 |
-| **Итого к сентябрю** | **~140–150** |
+| 10 паттерн-дней × ~5 | ~49 |
+| 2 симуляции × 5 | 10 |
+| Разгрузки | ~6 |
+| **Итого к 30 августа** | **~65** |
+| Сентябрь (backtracking, DP, продвинутое, mock) | +40 |
+| Октябрь (mock + добор) | +25 |
+| **Итого к концу октября** | **~130** |
