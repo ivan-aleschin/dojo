@@ -29,7 +29,7 @@ python-preference = "only-system"  # Заставляет uv искать Python
 # ─── Pytest ───────────────────────────────────────────────────────────────────
 
 [tool.pytest.ini_options]
-testpaths = ["algorithms", "leetcode", "coderun", "fastapi_practice"]
+testpaths = ["algorithms", "python_drills", "coderun"]
 pythonpath = ["."]
 addopts = "-ra -q --doctest-modules --import-mode=importlib"
 consider_namespace_packages = true

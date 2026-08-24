@@ -51,8 +51,14 @@ dojo/
 │   ├── templates/          # заготовки: задача, эталон, стаб, контест, конспект, mock
 │   └── companies/          # куда подаваться + разбор списка ОРИОКС
 │
-├── algorithms/             # решения по паттернам
+├── algorithms/             # РЕШЕНИЯ ПО ПАТТЕРНАМ — 11 папок, в каждой чек-лист задач
 │   └── <паттерн>/<NN_имя>/solution.py
+│
+├── python_drills/          # ТРЕНИРОВКА ПО PYTHON — файл на каждый модуль docs/python
+│   └── <NN_модуль>.py
+│
+├── notes/                  # КОНСПЕКТЫ: день, mock-собес, разборы реальных секций
+│   └── interviews/
 │
 ├── coderun/                # задачи с coderun.yandex.ru
 │   └── <NNNN_имя>/{README.md, solution.py}
@@ -61,6 +67,17 @@ dojo/
 ├── flake.nix               # dev-окружение (Nix)
 └── uv.lock
 ```
+
+## Куда что писать
+
+| Что | Куда | Заготовка |
+|---|---|---|
+| мини-задачи из модулей Python | [`python_drills/<NN_модуль>.py`](python_drills/README.md) | файлы уже заведены, задачи в шапке |
+| задачи по паттерну | [`algorithms/<паттерн>/<NN_имя>/solution.py`](algorithms/hash_map/README.md) | [`docs/templates/solution_stub.py`](docs/templates/solution_stub.py) |
+| задача с контеста | `coderun/<NNNN_имя>/` | [`docs/templates/coderun_task.md`](docs/templates/coderun_task.md) |
+| конспект дня | [`notes/YYYY-MM-DD_<паттерн>.md`](notes/README.md) | [`docs/templates/day_notes.md`](docs/templates/day_notes.md) |
+| mock-собес | `notes/YYYY-MM-DD_mock.md` | [`docs/templates/mock_interview.md`](docs/templates/mock_interview.md) |
+| разбор реальной секции | `notes/interviews/<компания>.md` | — |
 
 ## Как устроена работа над задачей
 

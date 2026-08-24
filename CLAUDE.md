@@ -67,13 +67,20 @@ Fast & Slow Pointers, Trees BFS/DFS, Graphs, Heap/Top-K, Backtracking+DP.
 
 ## Конвенции репозитория
 
-- Одна задача = одна папка: `<категория>/<паттерн>/<NN_имя>/solution.py` (+ `README.md` при нужде).
+- Задачи по паттернам: `algorithms/<паттерн>/<NN_имя>/solution.py`.
+  Все 11 папок паттернов уже заведены, в каждой `README.md` с чек-листом задач —
+  отмечать решённое там.
+- Мини-задачи по Python: `python_drills/<NN_модуль>.py` (файлы заведены заранее,
+  список задач в шапке каждого).
+- Конспекты, mock-собесы и разборы реальных секций: `notes/` по шаблонам
+  из `docs/templates/`.
 - Проверка примеров через **doctest** в docstring (pytest настроен на `--doctest-modules`).
 - Эталон = рабочее решение с доктестами. Задача Ивану = стаб с доктестами и
   `raise NotImplementedError` — он делает доктесты зелёными:
   `python -m doctest <путь>/solution.py -v`.
-- Теория паттерна — в `docs/patterns/NN_<паттерн>.md` (единственное место; 
-  `algorithms/*/README.md` больше не заводим).
+- Теория паттерна — только в `docs/patterns/NN_<паттерн>.md`.
+  `algorithms/<паттерн>/README.md` — не теория, а индекс: ссылка на урок
+  и чек-лист задач.
 - Python 3.14, современный синтаксис (`list[int]`, `int | None`). Линтер/типы: ruff + mypy strict.
 
 ## Прочее
