@@ -31,7 +31,10 @@ python-preference = "only-system"  # Заставляет uv искать Python
 [tool.pytest.ini_options]
 testpaths = ["algorithms", "leetcode", "coderun", "fastapi_practice"]
 pythonpath = ["."]
-addopts = "-ra -q --doctest-modules"
+addopts = "-ra -q --doctest-modules --import-mode=importlib"
+consider_namespace_packages = true
+# --import-mode=importlib нужен потому, что все задачи называются solution.py:
+# при обычном режиме pytest ругается на одинаковые имена модулей
 # --doctest-modules запускает примеры прямо из docstring'ов в solution.py
 # Если FastAPI-модули мешают, добавь:
 # norecursedirs = ["fastapi_practice", "playground", ".venv"]

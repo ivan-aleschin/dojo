@@ -1,54 +1,48 @@
-# Coding Dojo: алгоритмы, LeetCode, CodeRun, FastAPI
+# Coding Dojo — подготовка к стажировке (Backend Python)
+
+Учебный репозиторий: алгоритмические паттерны, задачи, план подготовки.
+
+## С чего начать
+
+| Файл | Зачем |
+|---|---|
+| **[`PREP_PLAN.md`](PREP_PLAN.md)** | стратегия, компании, дедлайны, прогресс по паттернам |
+| **[`DAILY_PLAN.md`](DAILY_PLAN.md)** | что делать сегодня — план по дням |
+| **[`docs/README.md`](docs/README.md)** | учебные материалы: Python и 11 паттернов |
+| [`RESUME.md`](RESUME.md) | резюме |
+| [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) | бэкенд-темы на потом (SQL, FastAPI, безопасность) |
+| [`CLAUDE.md`](CLAUDE.md) | протокол работы с ИИ-тренером |
 
 ## Структура
 
 ```
 dojo/
-├── pyproject.toml
-├── README.md
-├── .python-version         # uv читает этот файл для выбора интерпретатора
-├── uv.lock
-├── flake.nix
-├── flake.lock
-├── conftest.py             # глобальные фикстуры pytest (если нужны)
+├── docs/
+│   ├── python/             # 8 модулей экспресс-повторения Python
+│   ├── patterns/           # 11 уроков по паттернам: теория, эталон, задачи, чек-лист
+│   └── template_coderun.md # шаблон описания задачи с CodeRun
 │
-├── algorithms/             # чистые алгоритмы, без привязки к платформе
-│   ├── sorting/
-│   │   ├── merge_sort/
-│   │   │   ├── solution.py
-│   │   │   └── test_solution.py
-│   │   └── quick_sort/
-│   │       ├── solution.py
-│   │       └── test_solution.py
-│   ├── searching/
-│   │   └── binary_search/
-│   │       ├── solution.py  # содержит docstring с примерами → doctest
-│   │       └── test_solution.py
-│   ├── graphs/
-│   ├── dp/                 # dynamic programming
-│   └── data_structures/
+├── algorithms/             # решения по паттернам
+│   └── <паттерн>/<NN_имя>/solution.py
 │
-├── leetcode/
-│   ├── easy/
-│   │   └── 0001_two_sum/
-│   │       ├── solution.py
-│   │       └── test_solution.py
-│   ├── medium/
-│   │   └── 0033_search_in_rotated_array/
-│   │       ├── solution.py
-│   │       └── test_solution.py
-│   └── hard/
+├── coderun/                # задачи с coderun.yandex.ru
+│   └── <NNNN_имя>/{README.md, solution.py}
 │
-├── coderun/                # coderun.yandex.ru
-│   └── 0042_problem_name/
-│       ├── solution.py
-│       └── test_solution.py
-│
-├── fastapi_practice/       # отдельно, потому что это веб, а не алго
-│   ├── 01_basics/
-│   │   ├── app.py
-│   │   └── test_app.py     # через httpx + pytest-asyncio
-│   └── 02_todo_api/
-│
-└── playground/             # черновики, эксперименты без тестов
+├── pyproject.toml          # pytest настроен на --doctest-modules
+├── flake.nix               # dev-окружение (Nix)
+└── uv.lock
+```
+
+## Конвенции
+
+- Одна задача = одна папка с `solution.py`.
+- Примеры оформляются **доктестами** в docstring — они же и есть тесты.
+- Эталон = рабочее решение. Задача = стаб с доктестами и `raise NotImplementedError`.
+- Python 3.14, современный синтаксис (`list[int]`, `int | None`), ruff + mypy strict.
+
+## Запуск
+
+```bash
+pytest                                        # весь репозиторий
+python -m doctest <путь>/solution.py -v       # одна задача
 ```
