@@ -1,7 +1,8 @@
 # DAILY_PLAN — подготовка по дням (старт 25 августа 2026, Вт)
 
-Формат дня и чек-листы — в `PREP_PLAN.md`. Учебные материалы — в `docs/`:
-`docs/python/` (экспресс-повторение Python), `docs/patterns/` (11 паттернов).
+Формат дня и чек-листы — в [`PREP_PLAN.md`](PREP_PLAN.md). Учебные материалы рядом:
+[`python/`](python/01_basics_types.md) — повторение Python,
+[`patterns/`](patterns/01_hash_map.md) — 11 паттернов.
 Здесь — что именно делать каждый день.
 
 `(E)` = easy, `(M)` = medium, `[stretch]` = если осталось время.
@@ -16,7 +17,7 @@
 ## 🔥 День 0 — сегодня, до всякой учёбы
 
 Дедлайны не ждут, пока ты доучишь паттерны. Подробное обоснование, кто есть кто, —
-в `docs/companies/shortlist.md`.
+в `companies/shortlist.md`.
 
 **Волна 1 — на этой неделе** (заявка либо горит, либо ничего не запускает):
 
@@ -55,7 +56,7 @@
 
 ### Блок A — экспресс-повторение Python (2 дня)
 
-**День 1 — Вт 25.08 · `docs/python/` модули 01–04 · ~2.5 ч**
+**День 1 — Вт 25.08 · `python/` модули 01–04 · ~2.5 ч**
 Читать и **набирать руками** (не копипастить), делать мини-задачи из каждого модуля.
 1. `01_basics_types.md` — числа, деление, строки, срезы
 2. `02_collections.md` — list/dict/set/tuple, comprehensions
@@ -63,7 +64,7 @@
 4. `04_stdlib_algo.md` — Counter, defaultdict, deque, heapq, bisect
 - [ ] Мини-задачи всех четырёх модулей сделаны
 
-**День 2 — Ср 26.08 · `docs/python/` модули 05–08 + разминка · ~3 ч**
+**День 2 — Ср 26.08 · `python/` модули 05–08 + разминка · ~3 ч**
 1. `05_oop_and_typing.md` — класс, ListNode, TreeNode, dataclass
 2. `06_io_contest.md` — чтение stdin, шаблон контестного решения, doctest
 3. `07_gotchas.md` — грабли (обязательно пройти самотест в конце)
@@ -71,11 +72,11 @@
 Разминка, 3 задачи на скорость (по 10 мин, без подсказок):
 Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 - [ ] Самотест из модуля 07 пройден без ошибок
-- [ ] Контестный шаблон набран руками (сверить с `docs/templates/contest_solution.py`)
+- [ ] Контестный шаблон набран руками (сверить с `templates/contest_solution.py`)
 
 ### Блок B — паттерны отбора (27 августа → 1 сентября)
 
-**День 3 — Чт 27.08 · Hash Map / Set · 5 задач** → `docs/patterns/01_hash_map.md`
+**День 3 — Чт 27.08 · Hash Map / Set · 5 задач** → `patterns/01_hash_map.md`
 1. Single Number (E)
 2. Intersection of Two Arrays (E)
 3. Group Anagrams (M)
@@ -83,7 +84,7 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 5. Longest Consecutive Sequence (M)
 *(Two Sum / Contains Duplicate / Valid Anagram уже сделаны 26.08 как разминка)*
 
-**День 4 — Пт 28.08 · Two Pointers · 5 задач** → `docs/patterns/02_two_pointers.md`
+**День 4 — Пт 28.08 · Two Pointers · 5 задач** → `patterns/02_two_pointers.md`
 1. Valid Palindrome (E) — *стаб уже в репо*
 2. Remove Duplicates from Sorted Array (E)
 3. Squares of a Sorted Array (E)
@@ -91,14 +92,14 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 5. Container With Most Water (M)
 [stretch] 3Sum (M)
 
-**День 5 — Сб 29.08 · Sliding Window · 5 задач** → `docs/patterns/03_sliding_window.md`
+**День 5 — Сб 29.08 · Sliding Window · 5 задач** → `patterns/03_sliding_window.md`
 1. Maximum Average Subarray I (E)
 2. Best Time to Buy and Sell Stock (E)
 3. Longest Substring Without Repeating Characters (M)
 4. Minimum Size Subarray Sum (M)
 5. Longest Repeating Character Replacement (M)
 
-**День 6 — Вс 30.08 · Binary Search · 5 задач** → `docs/patterns/04_binary_search.md`
+**День 6 — Вс 30.08 · Binary Search · 5 задач** → `patterns/04_binary_search.md`
 1. Binary Search (E) — руками, без `bisect`
 2. Search Insert Position (E)
 3. Find First and Last Position (M)
@@ -106,14 +107,14 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 5. Koko Eating Bananas (M) — бинпоиск по ответу
 - [ ] ⚠️ Последний день подачи заявки в Авито — если ещё не подана, подать сейчас
 
-**День 7 — Пн 31.08 · Stack / Monotonic Stack · 5 задач** → `docs/patterns/05_stack.md`
+**День 7 — Пн 31.08 · Stack / Monotonic Stack · 5 задач** → `patterns/05_stack.md`
 1. Valid Parentheses (E)
 2. Next Greater Element I (E)
 3. Min Stack (M)
 4. Evaluate Reverse Polish Notation (M)
 5. Daily Temperatures (M)
 
-**День 8 — Вт 01.09 · Prefix Sums / Intervals · 5 задач** → `docs/patterns/06_prefix_sums.md`
+**День 8 — Вт 01.09 · Prefix Sums / Intervals · 5 задач** → `patterns/06_prefix_sums.md`
 Учебный год начался: сегодня и дальше по будням — вечерний блок ~2 ч.
 1. Running Sum of 1d Array (E)
 2. Find Pivot Index (E)
@@ -129,14 +130,14 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 **День 9 — Ср 02.09 · СИМУЛЯЦИЯ #1 · 5 задач за раз (~3 ч)**
 Среда — главный учебный день недели (3–4 ч свободных).
 Режим контеста: 5 смешанных задач по паттернам 1–6, без подсказок, время засекается.
-Ввод-вывод — **через stdin**, как на реальном экзамене (шаблон `docs/templates/contest_solution.py`, разбор — `docs/python/06_io_contest.md`).
+Ввод-вывод — **через stdin**, как на реальном экзамене (шаблон `templates/contest_solution.py`, разбор — `python/06_io_contest.md`).
 Разбор: что затормозило, какие паттерны просели.
 
 **День 10 — Чт 03.09 · Разбор симуляции + добор (~2 ч, вечер)**
 Только те паттерны, что просели вчера. 3–4 задачи.
 
 **День 11 — Пт 04.09 · Fast & Slow + связные списки · 4 задачи (~2 ч)**
-→ `docs/patterns/07_fast_slow.md`
+→ `patterns/07_fast_slow.md`
 1. Reverse Linked List (E)
 2. Linked List Cycle (E)
 3. Remove Nth Node From End (M)
@@ -144,7 +145,7 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 *(Middle of the Linked List уже решён в `coderun/0001`)*
 
 **День 12 — Сб 05.09 · Деревья BFS/DFS · 4 задачи (~2 ч, вечер)**
-→ `docs/patterns/08_trees.md`
+→ `patterns/08_trees.md`
 1. Maximum Depth of Binary Tree (E)
 2. Invert Binary Tree (E)
 3. Binary Tree Level Order Traversal (M)
@@ -165,16 +166,16 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 среда — 3–4 ч (главный учебный день), воскресенье — 2–3 ч.
 
 **Неделя 07–13.09 — Графы + Heap/Top-K**
-- Ср 09.09 (большой блок): Графы → `docs/patterns/09_graphs.md`
+- Ср 09.09 (большой блок): Графы → `patterns/09_graphs.md`
   Flood Fill (E), Number of Islands (M), Rotting Oranges (M), Course Schedule (M)
 - Вечера: Clone Graph (M), 01 Matrix (M), Pacific Atlantic (M)
-- Вс 13.09: Heap/Top-K → `docs/patterns/10_heap_topk.md`
+- Вс 13.09: Heap/Top-K → `patterns/10_heap_topk.md`
   Last Stone Weight (E), Kth Largest (M), Top K Frequent (M), K Closest Points (M)
 - [ ] Экзамен/контест Т-Банка пройден (дата — из личного кабинета)
 - [ ] Онлайн-тест Авито пройден (этап 2 отбора)
 
 **Неделя 14–20.09 — Backtracking**
-→ `docs/patterns/11_backtracking_dp.md`, часть 1
+→ `patterns/11_backtracking_dp.md`, часть 1
 - Ср 16.09: Subsets, Combination Sum, Permutations
 - Вечера: Generate Parentheses, Letter Combinations, Word Search
 - Вс 20.09: Subsets II / Combination Sum II (пропуск дубликатов), Palindrome Partitioning
@@ -182,7 +183,7 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
       Открывать в начале недели, чтобы выходные попали внутрь окна.
 
 **Неделя 21–27.09 — DP база (не меньше 8 задач)**
-→ `docs/patterns/11_backtracking_dp.md`, часть 2
+→ `patterns/11_backtracking_dp.md`, часть 2
 - Ср 23.09: Climbing Stairs, House Robber, House Robber II, Coin Change
 - Вечера: Min Cost Climbing Stairs, Unique Paths, Minimum Path Sum
 - Вс 27.09: LIS (оба решения), Word Break
@@ -212,7 +213,7 @@ Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
 **Каждую неделю:**
 - 1 mock-собес со мной (воскресенье): 2 задачи в блокноте без запуска, 60–70 мин
 - 2 больших блока (среда + один вечер): добор слабых паттернов, medium за 30–35 мин
-- Повторение чек-листов из `docs/patterns/*.md` — по одному паттерну в день,
+- Повторение чек-листов из `patterns/*.md` — по одному паттерну в день,
   вслух, без кода: триггеры, скелет, сложность
 
 **Недельные акценты:**

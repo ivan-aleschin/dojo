@@ -19,7 +19,7 @@ Wildberries, Сбер и МТС — волна 2, **7–10 сентября**: �
 через пару дней после заявки, входить туда неподготовленным незачем.
 Полный разбор — [`docs/companies/shortlist.md`](docs/companies/shortlist.md).
 
-**Завтра (25 августа) начинается учёба:** [`DAILY_PLAN.md`](DAILY_PLAN.md), День 1 —
+**Завтра (25 августа) начинается учёба:** [`docs/DAILY_PLAN.md`](docs/DAILY_PLAN.md), День 1 —
 модули 01–04 из [`docs/python/`](docs/python). Два дня на Python, дальше паттерны.
 
 ---
@@ -28,19 +28,24 @@ Wildberries, Сбер и МТС — волна 2, **7–10 сентября**: �
 
 | Файл | Зачем |
 |---|---|
-| **[`DAILY_PLAN.md`](DAILY_PLAN.md)** | что делать сегодня — план по дням до конца октября |
-| **[`PREP_PLAN.md`](PREP_PLAN.md)** | стратегия, компании, дедлайны, режим дня, прогресс по паттернам |
+| **[`docs/DAILY_PLAN.md`](docs/DAILY_PLAN.md)** | что делать сегодня — план по дням до конца октября |
+| **[`docs/PREP_PLAN.md`](docs/PREP_PLAN.md)** | стратегия, компании, дедлайны, режим дня, прогресс по паттернам |
 | **[`docs/README.md`](docs/README.md)** | учебные материалы: Python, паттерны, шаблоны, компании |
 | [`docs/companies/shortlist.md`](docs/companies/shortlist.md) | куда подаваться, когда и почему |
-| [`RESUME.md`](RESUME.md) | резюме |
-| [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) | бэкенд-темы на поздние секции (SQL, FastAPI, дизайн) |
+| [`docs/RESUME.md`](docs/RESUME.md) | резюме |
+| [`docs/BACKEND_ROADMAP.md`](docs/BACKEND_ROADMAP.md) | бэкенд-темы на поздние секции (SQL, FastAPI, дизайн) |
 | [`CLAUDE.md`](CLAUDE.md) | протокол работы с ИИ-тренером |
 
 ## Структура
 
 ```
 dojo/
-├── docs/
+├── CLAUDE.md               # протокол работы с ИИ-тренером
+├── docs/                   # ВСЁ остальное: планы, курсы, шаблоны, компании
+│   ├── DAILY_PLAN.md       # план по дням
+│   ├── PREP_PLAN.md        # стратегия, компании, дедлайны, прогресс
+│   ├── RESUME.md
+│   ├── BACKEND_ROADMAP.md
 │   ├── python/             # 8 модулей экспресс-повторения Python (2 дня)
 │   ├── patterns/           # 11 уроков по паттернам: теория, эталон, задачи, чек-лист
 │   ├── templates/          # заготовки: задача, эталон, стаб, контест, конспект, mock
@@ -65,7 +70,7 @@ dojo/
 4. **Разбор** — edge-кейсы, `O(время)/O(память)`, что можно улучшить.
 
 Полный протокол и роль тренера — в [`CLAUDE.md`](CLAUDE.md), протокол mock-собеса —
-в [`PREP_PLAN.md`](PREP_PLAN.md) §6.
+в [`docs/PREP_PLAN.md`](docs/PREP_PLAN.md) §6.
 
 ## Конвенции
 

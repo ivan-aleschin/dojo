@@ -1,17 +1,30 @@
-# docs/ — учебные материалы
+# docs/ — планы и учебные материалы
 
-Четыре раздела: два учебных курса, заготовки и разбор компаний.
+Здесь лежит всё, кроме `README.md` и `CLAUDE.md` (они остались в корне репозитория).
+
+**Планы и документы:**
+
+| Файл | Что внутри |
+|---|---|
+| [`DAILY_PLAN.md`](DAILY_PLAN.md) | что делать каждый день: заявки, паттерны, симуляции, mock-собесы |
+| [`PREP_PLAN.md`](PREP_PLAN.md) | стратегия, компании и дедлайны, режим дня, прогресс по паттернам |
+| [`RESUME.md`](RESUME.md) | резюме |
+| [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) | бэкенд-темы на поздние секции: SQL, FastAPI, системный дизайн |
+
+**Курсы и справочники:** `python/`, `patterns/`, `templates/`, `companies/` — ниже.
 
 ## С чего начать
 
 | Если тебе нужно | Иди сюда |
 |---|---|
-| понять, что делать сегодня | [`../DAILY_PLAN.md`](../DAILY_PLAN.md) |
+| понять, что делать сегодня | [`DAILY_PLAN.md`](DAILY_PLAN.md) |
 | вспомнить Python перед алгоритмами (2 дня) | [`python/01_basics_types.md`](python/01_basics_types.md) |
 | изучить паттерн и порешать по нему задачи | [`patterns/01_hash_map.md`](patterns/01_hash_map.md) |
 | оформить задачу, конспект или mock-собес | [`templates/`](templates/README.md) |
 | понять, куда подаваться и когда | [`companies/shortlist.md`](companies/shortlist.md) |
-| стратегия, дедлайны, прогресс | [`../PREP_PLAN.md`](../PREP_PLAN.md) |
+| стратегия, дедлайны, прогресс | [`PREP_PLAN.md`](PREP_PLAN.md) |
+| подготовиться к секции про бэкенд | [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) |
+| обновить резюме | [`RESUME.md`](RESUME.md) |
 
 ## 1. `python/` — экспресс-повторение Python (2 дня)
 

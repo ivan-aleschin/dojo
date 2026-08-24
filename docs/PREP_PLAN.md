@@ -8,10 +8,10 @@
 Дата старта плана: **25 августа 2026**. Даты по компаниям проверены **24 августа 2026**.
 Пересмотр плана: 20 октября 2026.
 
-Учебные материалы лежат в **`docs/`**:
-`docs/python/` — экспресс-повторение Python (8 модулей, 2 дня),
-`docs/patterns/` — 11 паттернов с теорией, эталонами и задачами.
-План по дням — в **`DAILY_PLAN.md`**. Резюме — в `RESUME.md`.
+Всё лежит рядом, в `docs/`: план по дням — **[`DAILY_PLAN.md`](DAILY_PLAN.md)**,
+экспресс-повторение Python — [`python/`](python/01_basics_types.md) (8 модулей, 2 дня),
+11 паттернов — [`patterns/`](patterns/01_hash_map.md), разбор компаний —
+[`companies/`](companies/shortlist.md), резюме — [`RESUME.md`](RESUME.md).
 
 ---
 
@@ -86,7 +86,7 @@
 тестовое задание и видеоинтервью → техническое собеседование с разработчиком →
 интервью с руководителем и HR. Пять этапов, то есть начинать надо было вчера.
 
-Разбор всего списка ОРИОКС по категориям и вердиктам — **`docs/companies/`**
+Разбор всего списка ОРИОКС по категориям и вердиктам — **`companies/`**
 (`shortlist.md` — куда идти и почему, `oriocs_list.md` — полный список).
 
 **Резервный список (малые/средние, вход по письму, стажировочных программ нет):**
@@ -108,7 +108,7 @@
 ### Чек-лист заявок
 
 Делится на две волны — не по дедлайнам, а по тому, **что запускает подача**.
-Обоснование и полная таблица — `docs/companies/shortlist.md`.
+Обоснование и полная таблица — `companies/shortlist.md`.
 
 **Волна 1, эта неделя** (горит либо ничего не запускает):
 
@@ -137,7 +137,7 @@
 Именно здесь схема обычно разваливается: залип на час → учёба съедена.
 
 **До 1 сентября, ~2.5–3 ч учёбы:**
-- 0.5 ч — теория паттерна по `docs/patterns/NN_*.md` + разбор эталона
+- 0.5 ч — теория паттерна по `patterns/NN_*.md` + разбор эталона
 - 2–2.5 ч — 4–5 задач с моим ревью, разбито на «окна» между проверками агентов
 - 5 мин — мини-конспект + чек-бокс паттерна
 
@@ -164,25 +164,25 @@
 
 ## 4. Паттерны — прогресс
 
-Теория и задачи по каждому — в `docs/patterns/`. Отмечать после того, как
+Теория и задачи по каждому — в `patterns/`. Отмечать после того, как
 пройден чек-лист в конце урока, а не после «прочитал».
 
 Приоритет 1 — **отборочный экзамен** (что реально спрашивают на онлайн-тестах):
 
-- [ ] 1. [Hash Map / Set](docs/patterns/01_hash_map.md)
-- [ ] 2. [Two Pointers](docs/patterns/02_two_pointers.md)
-- [ ] 3. [Sliding Window](docs/patterns/03_sliding_window.md)
-- [ ] 4. [Binary Search](docs/patterns/04_binary_search.md) (+ по ответу)
-- [ ] 5. [Stack / Monotonic Stack](docs/patterns/05_stack.md)
-- [ ] 6. [Prefix Sums / Intervals](docs/patterns/06_prefix_sums.md)
+- [ ] 1. [Hash Map / Set](patterns/01_hash_map.md)
+- [ ] 2. [Two Pointers](patterns/02_two_pointers.md)
+- [ ] 3. [Sliding Window](patterns/03_sliding_window.md)
+- [ ] 4. [Binary Search](patterns/04_binary_search.md) (+ по ответу)
+- [ ] 5. [Stack / Monotonic Stack](patterns/05_stack.md)
+- [ ] 6. [Prefix Sums / Intervals](patterns/06_prefix_sums.md)
 
 Приоритет 2 — **технические секции** (после отбора):
 
-- [ ] 7. [Fast & Slow Pointers / связные списки](docs/patterns/07_fast_slow.md)
-- [ ] 8. [Деревья: BFS / DFS](docs/patterns/08_trees.md)
-- [ ] 9. [Графы: BFS / DFS](docs/patterns/09_graphs.md) (+ топосорт, Дейкстра, Union-Find)
-- [ ] 10. [Heap / Top-K](docs/patterns/10_heap_topk.md)
-- [ ] 11. [Backtracking + DP](docs/patterns/11_backtracking_dp.md) (≥15 задач динамики)
+- [ ] 7. [Fast & Slow Pointers / связные списки](patterns/07_fast_slow.md)
+- [ ] 8. [Деревья: BFS / DFS](patterns/08_trees.md)
+- [ ] 9. [Графы: BFS / DFS](patterns/09_graphs.md) (+ топосорт, Дейкстра, Union-Find)
+- [ ] 10. [Heap / Top-K](patterns/10_heap_topk.md)
+- [ ] 11. [Backtracking + DP](patterns/11_backtracking_dp.md) (≥15 задач динамики)
 
 Прогресс задач: `0 / ~120`.
 
@@ -190,7 +190,7 @@
 
 ## 5. Python-минимум
 
-Полный курс — `docs/python/` (8 модулей, 25–26 августа). Кратко, что должно быть в руках:
+Полный курс — `python/` (8 модулей, 25–26 августа). Кратко, что должно быть в руках:
 `list/dict/set/tuple`, срезы, `enumerate/zip`, `collections` (`defaultdict`, `Counter`,
 `deque`), `heapq`, `bisect`, сортировка с `key=`, comprehensions, классы
 (`ListNode`, `TreeNode`, design-задачи), `input()/sys.stdin` для контеста,
@@ -242,7 +242,7 @@
 
 - **`docs/`** в этом репозитории — основной курс, всё остальное дополняет.
 - **CodeRun** (coderun.yandex.ru) — подборки под собесы Яндекса.
-- **LeetCode** — Top Interview 150 / по тегам-паттернам (названия задач в `docs/patterns/`).
+- **LeetCode** — Top Interview 150 / по тегам-паттернам (названия задач в `patterns/`).
 - **NeetCode** (neetcode.io) — паттерны и разборы.
 - **Тренировки по алгоритмам от Яндекса** — бесплатно.
 - **Telegram**: «Поступашки — ШАД, Стажировки и Магистратура» (@postypashki_old).

@@ -1,6 +1,6 @@
 # Two Pointers — задачи
 
-Теория паттерна переехала в **[`docs/patterns/02_two_pointers.md`](../../docs/patterns/02_two_pointers.md)**:
+Теория паттерна переехала в **[`../../docs/patterns/02_two_pointers.md`](../../docs/patterns/02_two_pointers.md)**:
 идея, триггеры, три схемы, разобранный эталон, типичные ошибки, список задач и чек-лист.
 
 Здесь — только решения:
