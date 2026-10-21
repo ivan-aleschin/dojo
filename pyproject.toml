@@ -1,25 +1,20 @@
 [project]
 name = "dojo"
 version = "0.1.0"
-description = "Coding Dojo: алгоритмы, LeetCode, CodeRun, FastAPI"
+description = "Coding Dojo: подготовка к стажировке — алгоритмы, Python, бэкенд"
 readme = "README.md"
 requires-python = ">=3.14"
 license = { text = "MIT" }
 authors = [{ name = "Ivan" }]
 
 dependencies = [
-    "numpy>=2.3.0",          # матрицы, векторные операции
-    "pytest>=9.0.0",         # тесты
-    "pytest-benchmark>=5.0", # замеры скорости решений
-    "rich>=14.0.0",          # красивый вывод в консоль
+    "pytest>=9.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.15.0",          # линтер + форматтер (заменяет black + flake8 + isort)
+    "ruff>=0.15.0",          # линтер + форматтер
     "mypy>=1.20.0",          # статическая типизация
-    "pytest-asyncio>=0.25",  # для FastAPI тестов
-    "httpx>=0.28",           # тестовый клиент для FastAPI
 ]
 
 [tool.uv]
@@ -29,15 +24,13 @@ python-preference = "only-system"  # Заставляет uv искать Python
 # ─── Pytest ───────────────────────────────────────────────────────────────────
 
 [tool.pytest.ini_options]
-testpaths = ["algorithms", "python_drills", "coderun", "tests"]
+testpaths = ["algorithms", "python", "coderun", "tests"]
 pythonpath = ["."]
 addopts = "-ra -q --doctest-modules --import-mode=importlib"
 consider_namespace_packages = true
 # --import-mode=importlib нужен потому, что все задачи называются solution.py:
 # при обычном режиме pytest ругается на одинаковые имена модулей
 # --doctest-modules запускает примеры прямо из docstring'ов в solution.py
-# Если FastAPI-модули мешают, добавь:
-# norecursedirs = ["fastapi_practice", "playground", ".venv"]
 
 # ─── Ruff (линтер + форматтер вместо black) ───────────────────────────────────
 

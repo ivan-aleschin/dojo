@@ -41,7 +41,7 @@ dojo/
 │   ├── growth-plan.md      # годовой трек фундамента
 │   ├── resume.md
 │   ├── backend-roadmap.md
-│   ├── python/             # 8 модулей экспресс-повторения Python (2 дня)
+│   ├── python/             # 8 модулей экспресс-повторения Python
 │   ├── patterns/           # 11 уроков по паттернам: теория, эталон, задачи, чек-лист
 │   ├── templates/          # заготовки: задача, эталон, стаб, контест, симуляция, mock
 │   └── companies/          # куда подаваться + разбор списка ОРИОКС
@@ -49,11 +49,13 @@ dojo/
 ├── algorithms/             # РЕШЕНИЯ ПО ПАТТЕРНАМ — 11 папок, в каждой чек-лист задач
 │   └── <паттерн>/<NN_имя>/solution.py
 │
-├── python_drills/          # ТРЕНИРОВКА ПО PYTHON — файл на каждый модуль docs/python
+├── python/                 # ТРЕНИРОВКА ПО PYTHON — файл на каждый модуль docs/python
 │   └── <NN_модуль>.py
 │
-├── journal/                # ЖУРНАЛ ТРЕНИРОВОК: mock, симуляции, реальные секции, стажировка
-│   └── interviews/
+├── journal/                # ЖУРНАЛ ТРЕНИРОВОК (знания — в Obsidian)
+│   └── mock/ simulations/ interviews/ internship/
+│
+├── tests/                  # контракт структуры для ссылок из Obsidian
 │
 ├── coderun/                # задачи с coderun.yandex.ru
 │   └── <NNNN_имя>/{README.md, solution.py}
@@ -67,7 +69,7 @@ dojo/
 
 | Что | Куда | Заготовка |
 |---|---|---|
-| мини-задачи из модулей Python | [`python_drills/<NN_модуль>.py`](python_drills/README.md) | файлы уже заведены, задачи в шапке |
+| мини-задачи из модулей Python | [`python/<NN_модуль>.py`](python/README.md) | файлы уже заведены, задачи в шапке |
 | задачи по паттерну | [`algorithms/<паттерн>/<NN_имя>/solution.py`](algorithms/hash_map/README.md) | [`docs/templates/solution_stub.py`](docs/templates/solution_stub.py) |
 | задача с контеста | `coderun/<NNNN_имя>/` | [`docs/templates/coderun-task.md`](docs/templates/coderun-task.md) |
 | конспект темы | Obsidian, своими словами | — |

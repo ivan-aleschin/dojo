@@ -1,5 +1,5 @@
 {
-  description = "Dojo Environment for Code Kata (C++, C#, Python, Qt6)";
+  description = "Dojo: подготовка к стажировке (Python)";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -17,30 +17,11 @@
           default = pkgs.mkShell {
             packages = with pkgs; [
               git
-              git-cliff
-              # --- C/C++ ---
-              gcc
-              gnumake
-              cmake
-              clang-tools
-              pkg-config
-              # --- Qt6 для GUI ---
-              qt6.qtbase
-              qt6.qtwayland
-              qt6.qtimageformats
-              qt6.wrapQtAppsHook
-            ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
-              gdb
-              valgrind
-            ] ++ [
-              # --- C# ---
-              dotnet-sdk
-              # --- Python ---
               python314
               uv
             ];
             shellHook = ''
-              echo "🛠️ Dojo Environment Loaded (C/C++, C#, Python, Qt6) [${system}]"
+              echo "🛠️ Dojo (Python) [${system}]"
             '';
           };
         }

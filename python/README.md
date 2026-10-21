@@ -1,4 +1,4 @@
-# python_drills — тренировка по Python
+# python — тренировка по Python
 
 Сюда пишешь мини-задачи из модулей [`docs/python/`](../docs/python/01-basics-types.md).
 Один модуль = один файл. Файл заранее заведён, в нём шапка со списком задач —
@@ -37,8 +37,8 @@ def digits_only(s: str) -> str:
 ```
 
 ```bash
-pytest python_drills                     # все дрилы
-python -m doctest python_drills/01_basics_types.py -v   # один файл
+pytest python                     # все дрилы
+python -m doctest python/01_basics_types.py -v   # один файл
 ```
 
 Файлы без доктестов тесты не ломают — пока не написал ни одного, `pytest` их просто пропускает.
