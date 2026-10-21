@@ -1,7 +1,7 @@
 # Fast & Slow Pointers / связные списки — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/07_fast_slow.md`](../../docs/patterns/07_fast_slow.md)**.
+**[`docs/patterns/07-fast-slow.md`](../../docs/patterns/07-fast-slow.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

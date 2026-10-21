@@ -1,7 +1,7 @@
 # Hash Map / Set — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/01_hash_map.md`](../../docs/patterns/01_hash_map.md)**.
+**[`docs/patterns/01-hash-map.md`](../../docs/patterns/01-hash-map.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

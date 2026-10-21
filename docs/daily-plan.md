@@ -1,8 +1,8 @@
-# DAILY_PLAN — подготовка по неделям (старт 22 октября 2026, Чт)
+# daily-plan — подготовка по неделям (старт 22 октября 2026, Чт)
 
-Стратегия, компании и режим дня — в [`PREP_PLAN.md`](PREP_PLAN.md).
-Годовой фундамент — в [`GROWTH_PLAN.md`](GROWTH_PLAN.md).
-Материалы: [`python/`](python/01_basics_types.md), [`patterns/`](patterns/01_hash_map.md).
+Стратегия, компании и режим дня — в [`prep-plan.md`](prep-plan.md).
+Годовой фундамент — в [`growth-plan.md`](growth-plan.md).
+Материалы: [`python/`](python/01-basics-types.md), [`patterns/`](patterns/01-hash-map.md).
 
 `(E)` = easy, `(M)` = medium, `[stretch]` = если осталось время.
 
@@ -17,8 +17,8 @@
 ## Неделя 0 — 21–25.10 · старт
 
 **Ср 21.10 — организационное (~1 ч)**
-- [ ] `RESUME.md` обновлён: almanako, iskra, инфраструктура, работа с агентами
-- [ ] Проверены открытые волны: Т-Банк, Авито, МТС, WB, Сбер, Ozon Camp (даты → `PREP_PLAN.md` §3)
+- [ ] `resume.md` обновлён: almanako, iskra, инфраструктура, работа с агентами
+- [ ] Проверены открытые волны: Т-Банк, Авито, МТС, WB, Сбер, Ozon Camp (даты → `prep-plan.md` §3)
 - [ ] Предупредить кафедру: смена места практики — вероятно в феврале
 
 **Чт 22.10 · `python/` 01–02** — набирать руками, мини-задачи в `python_drills/`
@@ -33,16 +33,16 @@
 
 ## Неделя 1 — 26.10–01.11 · Hash Map, Two Pointers, Sliding Window, Binary Search
 
-- **Пн 26.10 · Hash Map** → `patterns/01_hash_map.md`: Single Number (E), Intersection of Two Arrays (E)
+- **Пн 26.10 · Hash Map** → `patterns/01-hash-map.md`: Single Number (E), Intersection of Two Arrays (E)
 - **Вт 27.10 · Hash Map:** Group Anagrams (M), Isomorphic Strings (M), Longest Consecutive Sequence (M)
-- **Ср 28.10 · Two Pointers** → `patterns/02_two_pointers.md`:
+- **Ср 28.10 · Two Pointers** → `patterns/02-two-pointers.md`:
   Valid Palindrome (E, *стаб уже в репо*), Remove Duplicates (E), Squares of a Sorted Array (E),
   Merge Sorted Array (E), Container With Most Water (M), [stretch] 3Sum (M)
-- **Чт 29.10 · Sliding Window** → `patterns/03_sliding_window.md`:
+- **Чт 29.10 · Sliding Window** → `patterns/03-sliding-window.md`:
   Maximum Average Subarray I (E), Best Time to Buy and Sell Stock (E)
 - **Пт 30.10 · Sliding Window:** Longest Substring Without Repeating (M),
   Minimum Size Subarray Sum (M), Longest Repeating Character Replacement (M)
-- **Вс 01.11 · Binary Search** → `patterns/04_binary_search.md`:
+- **Вс 01.11 · Binary Search** → `patterns/04-binary-search.md`:
   Binary Search (E, без `bisect`), Search Insert Position (E), First and Last Position (M),
   Search in Rotated Sorted Array (M), Koko Eating Bananas (M) — бинпоиск по ответу
 
@@ -53,9 +53,9 @@
 ## Неделя 2 — 02–08.11 · Stack, Prefix Sums, симуляция #1
 
 - [ ] **Пн 02.11 — подать заявку в Т-Банк.** Экзамен ≈ через 2 недели; дату вписать сюда: `______`
-- **Пн 02.11 · Stack** → `patterns/05_stack.md`: Valid Parentheses (E), Next Greater Element I (E)
+- **Пн 02.11 · Stack** → `patterns/05-stack.md`: Valid Parentheses (E), Next Greater Element I (E)
 - **Вт 03.11 · Stack:** Min Stack (M), Evaluate RPN (M), Daily Temperatures (M)
-- **Ср 04.11 · Prefix Sums / Intervals** → `patterns/06_prefix_sums.md`:
+- **Ср 04.11 · Prefix Sums / Intervals** → `patterns/06-prefix-sums.md`:
   Running Sum (E), Find Pivot Index (E), Product of Array Except Self (M),
   Subarray Sum Equals K (M), Merge Intervals (M)
 - **Чт 05.11 – Пт 06.11 · добор** — 2–3 задачи по самому слабому из паттернов 1–6
@@ -69,9 +69,9 @@
 ## Неделя 3 — 09–15.11 · Списки и деревья
 
 - **Пн 09.11 · Добор** по итогам симуляции #1 (2–3 задачи)
-- **Вт 10.11 · Fast & Slow** → `patterns/07_fast_slow.md`: Reverse Linked List (E), Linked List Cycle (E)
+- **Вт 10.11 · Fast & Slow** → `patterns/07-fast-slow.md`: Reverse Linked List (E), Linked List Cycle (E)
 - **Ср 11.11 · Списки + деревья:** Remove Nth Node From End (M), Palindrome Linked List (M);
-  → `patterns/08_trees.md`: Maximum Depth (E), Invert Binary Tree (E)
+  → `patterns/08-trees.md`: Maximum Depth (E), Invert Binary Tree (E)
 - **Чт 12.11 · Деревья:** Level Order Traversal (M), Validate BST (M)
 - **Пт 13.11 · Деревья:** Lowest Common Ancestor (M), Diameter of Binary Tree (E)
 - **Вс 15.11 · Повторение 1–6 перед экзаменом Т-Банка:** 4 задачи на время, по одной из разных паттернов
@@ -83,16 +83,16 @@
 - [ ] **Подать: Wildberries, Сбер, МТС** (тест приходит через несколько дней — к этому моменту готовы)
 - [ ] **Авито** — если волна открыта, подать
 - [ ] **Экзамен Т-Банка** (дата из ЛК)
-- **Пн–Вт · Графы** → `patterns/09_graphs.md`: Flood Fill (E), Number of Islands (M), Rotting Oranges (M)
+- **Пн–Вт · Графы** → `patterns/09-graphs.md`: Flood Fill (E), Number of Islands (M), Rotting Oranges (M)
 - **Ср 18.11 · Графы:** Course Schedule (M), Clone Graph (M), 01 Matrix (M), Pacific Atlantic (M)
-- **Чт–Пт · Heap/Top-K** → `patterns/10_heap_topk.md`: Last Stone Weight (E), Kth Largest (M)
+- **Чт–Пт · Heap/Top-K** → `patterns/10-heap-topk.md`: Last Stone Weight (E), Kth Largest (M)
 - **Вс 22.11 · Heap:** Top K Frequent (M), K Closest Points (M), Find Median from Data Stream (H, [stretch])
 
 ---
 
 ## Неделя 5 — 23–29.11 · Backtracking + DP (часть 1), симуляция #2
 
-→ `patterns/11_backtracking_dp.md`
+→ `patterns/11-backtracking-dp.md`
 - **Пн–Вт · Backtracking:** Subsets, Permutations, Combination Sum
 - **Ср 25.11:** Generate Parentheses, Letter Combinations, Word Search, Subsets II (дубликаты)
 - **Чт–Пт · DP база:** Climbing Stairs, House Robber, Min Cost Climbing Stairs
@@ -107,7 +107,7 @@
 - **Ср 02.12:** Minimum Path Sum, LIS (оба решения), Word Break
 - **Чт–Пт · тест Яндекса**
 - **Вс 06.12:** Partition Equal Subset Sum, LCS
-- [ ] Рассказ про almanako/iskra на 10 минут готов (`PREP_PLAN.md` §8)
+- [ ] Рассказ про almanako/iskra на 10 минут готов (`prep-plan.md` §8)
 
 ---
 
@@ -116,15 +116,15 @@
 - [ ] **Ozon Camp — подать** (проверить дедлайн IT-трека)
 - **Пн–Вт:** Дейкстра (Network Delay Time), Union-Find (Number of Provinces)
 - **Ср 09.12:** Trie (Implement Trie), LRU Cache, Edit Distance
-- **Чт–Пт:** SQL под секции — JOIN, GROUP BY, оконные функции (`BACKEND_ROADMAP.md` §2, pgexercises)
-- **Вс 13.12 · MOCK №1** — 2 задачи в блокноте без запуска (`PREP_PLAN.md` §6)
+- **Чт–Пт:** SQL под секции — JOIN, GROUP BY, оконные функции (`backend-roadmap.md` §2, pgexercises)
+- **Вс 13.12 · MOCK №1** — 2 задачи в блокноте без запуска (`prep-plan.md` §6)
 
 ---
 
 ## Неделя 8 — 14–20.12 · Секции: бэкенд + mock №2
 
 - **Пн–Пт вечера:** бэкенд-темы под секции — HTTP и статус-коды, транзакции и уровни изоляции,
-  индексы и N+1, async/GIL (`BACKEND_ROADMAP.md` §1, 2, 8)
+  индексы и N+1, async/GIL (`backend-roadmap.md` §1, 2, 8)
 - **Ср 16.12:** 3 задачи medium на время + разбор слабых паттернов
 - **Вс 20.12 · MOCK №2** — алгоритмы + 15 мин вопросов «про проект»
 
@@ -145,8 +145,8 @@
 **После каждой реальной секции** — разбор в `notes/interviews/<компания>.md` в тот же день.
 
 **31.01.2027 — КОНТРОЛЬНАЯ ТОЧКА.**
-- Есть оффер → выход, бумага о смене места практики, `PREP_PLAN.md` §7 (как пройти стажировку).
-- Нет оффера → **план B**: февраль–март — фундамент (`GROWTH_PLAN.md`, треки 3–4) +
+- Есть оффер → выход, бумага о смене места практики, `prep-plan.md` §7 (как пройти стажировку).
+- Нет оффера → **план B**: февраль–март — фундамент (`growth-plan.md`, треки 3–4) +
   1 mock в неделю; весенние наборы на лето (март–апрель); старт июнь–июль после выпуска.
 
 ---

@@ -175,7 +175,7 @@ while stack or cur:
 | 7 | **Daily Temperatures** (M) | монотонный — разобран |
 | 8 | **Simplify Path** (M) | стек + разбор строки |
 | 9 | **Asteroid Collision** (M) | стек со сложной логикой снятия |
-| 10 | **Generate Parentheses** (M) | пересечение с [backtracking](11_backtracking_dp.md) |
+| 10 | **Generate Parentheses** (M) | пересечение с [backtracking](11-backtracking-dp.md) |
 | 11 | **Largest Rectangle in Histogram** (H) | монотонный стек, вершина паттерна |
 
 №5 — типичная «design»-задача отборочных: `get_min` за `O(1)` через второй стек минимумов.

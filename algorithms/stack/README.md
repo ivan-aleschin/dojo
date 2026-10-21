@@ -1,7 +1,7 @@
 # Stack / Monotonic Stack — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/05_stack.md`](../../docs/patterns/05_stack.md)**.
+**[`docs/patterns/05-stack.md`](../../docs/patterns/05-stack.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

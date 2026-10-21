@@ -1,7 +1,7 @@
 # Графы BFS / DFS — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/09_graphs.md`](../../docs/patterns/09_graphs.md)**.
+**[`docs/patterns/09-graphs.md`](../../docs/patterns/09-graphs.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

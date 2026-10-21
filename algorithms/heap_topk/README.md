@@ -1,7 +1,7 @@
 # Heap / Top-K — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/10_heap_topk.md`](../../docs/patterns/10_heap_topk.md)**.
+**[`docs/patterns/10-heap-topk.md`](../../docs/patterns/10-heap-topk.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

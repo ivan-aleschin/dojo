@@ -25,7 +25,7 @@
 - в лоб решается двумя вложенными циклами, а `n` до 10⁵ (значит `O(n²)` не влезет).
 
 ⚠️ Антитриггер: если массив **уже отсортирован**, обычно ждут
-[Two Pointers](02_two_pointers.md) с памятью `O(1)`, а не хеш.
+[Two Pointers](02-two-pointers.md) с памятью `O(1)`, а не хеш.
 
 ## Скелеты кода
 
@@ -144,10 +144,10 @@ def two_sum(nums: list[int], target: int) -> tuple[int, int]:
 | 4 | **Single Number** (E) | хеш ИЛИ xor — знать оба решения |
 | 5 | **Intersection of Two Arrays** (E) | операции над множествами |
 | 6 | **Group Anagrams** (M) | `defaultdict(list)`, ключ-кортеж |
-| 7 | **Top K Frequent Elements** (M) | `Counter.most_common`, потом [через кучу](10_heap_topk.md) |
+| 7 | **Top K Frequent Elements** (M) | `Counter.most_common`, потом [через кучу](10-heap-topk.md) |
 | 8 | **Longest Consecutive Sequence** (M) | set + амортизированный анализ |
 | 9 | **Isomorphic Strings** (E/M) | два словаря-биекции |
-| 10 | **Subarray Sum Equals K** (M) | хеш + [префиксные суммы](06_prefix_sums.md) |
+| 10 | **Subarray Sum Equals K** (M) | хеш + [префиксные суммы](06-prefix-sums.md) |
 
 **Разбор №8 (частый вопрос на секции).** Наивно — отсортировать, `O(n log n)`.
 Через `set`: цепочку начинаем считать только с числа `x`, у которого нет `x-1`

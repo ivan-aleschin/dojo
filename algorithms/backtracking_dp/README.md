@@ -1,7 +1,7 @@
 # Backtracking + DP — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/11_backtracking_dp.md`](../../docs/patterns/11_backtracking_dp.md)**.
+**[`docs/patterns/11-backtracking-dp.md`](../../docs/patterns/11-backtracking-dp.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

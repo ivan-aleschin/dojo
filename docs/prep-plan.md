@@ -1,4 +1,4 @@
-# PREP_PLAN — стажировка с января 2027 → сильная конверсия к лету
+# prep-plan — стажировка с января 2027 → сильная конверсия к лету
 
 > **Цель 1 — оффер стажировки со стартом в январе–феврале 2027** (план A)
 > или в июне–июле 2027, после выпуска (план B).
@@ -9,10 +9,10 @@
 
 Пересмотр плана: **21 октября 2026** (старый план «оффер к концу октября» снят —
 практическая подготовка к нему в августе–октябре так и не стартовала, начинаем заново, с запасом).
-Годовой трек фундаментальных знаний — **[`GROWTH_PLAN.md`](GROWTH_PLAN.md)**.
-План по неделям — **[`DAILY_PLAN.md`](DAILY_PLAN.md)**.
-Учебные материалы: [`python/`](python/01_basics_types.md), [`patterns/`](patterns/01_hash_map.md),
-компании — [`companies/`](companies/shortlist.md), резюме — [`RESUME.md`](RESUME.md).
+Годовой трек фундаментальных знаний — **[`growth-plan.md`](growth-plan.md)**.
+План по неделям — **[`daily-plan.md`](daily-plan.md)**.
+Учебные материалы: [`python/`](python/01-basics-types.md), [`patterns/`](patterns/01-hash-map.md),
+компании — [`companies/`](companies/shortlist.md), резюме — [`resume.md`](resume.md).
 
 ---
 
@@ -34,7 +34,7 @@
 - **200+ тыс. к лету 2027 — достижимая цель**, если: бигтех, сильная стажировка,
   конверсия на junior+/«сильный junior» и параллельно глубокая база. Это и есть план.
 - **Ускоритель, который реально работает:** на стажировке брать ownership
-  (см. §7), а по базе — знать больше типичного стажёра (см. `GROWTH_PLAN.md`).
+  (см. §7), а по базе — знать больше типичного стажёра (см. `growth-plan.md`).
 - **Что не работает:** «я вайбкодил проекты». На ревью грейда оценивают
   решения и влияние, а не объём сгенерированного кода.
 
@@ -68,11 +68,11 @@
 21.12–31.01   Сессия + технические секции и финалы. Mock раз в неделю
 31.01.2027    КОНТРОЛЬНАЯ ТОЧКА: есть оффер → выход, смена практики.
               Нет → план B
-Фев–май       План B: глубокая база (GROWTH_PLAN) + весенние наборы
+Фев–май       План B: глубокая база (growth-plan) + весенние наборы
               на лето (март–апрель), старт июнь–июль после выпуска
 ```
 
-Фон весь год — **фундаментальный трек** (`GROWTH_PLAN.md`), ~25 % учебного времени
+Фон весь год — **фундаментальный трек** (`growth-plan.md`), ~25 % учебного времени
 до января и основное время после оффера.
 
 Почему так: подача заявки запускает часы (тест приходит через несколько дней,
@@ -103,8 +103,8 @@
 
 ### Чек-лист заявок
 
-- [ ] Резюме (`RESUME.md`) обновлено: almanako, iskra, инфраструктура, ссылка на `ARCHITECTURE.md`
-- [ ] Т-Банк — подана (неделя 02–08.11); дата экзамена вписана в `DAILY_PLAN.md`
+- [ ] Резюме (`resume.md`) обновлено: almanako, iskra, инфраструктура, ссылка на `ARCHITECTURE.md`
+- [ ] Т-Банк — подана (неделя 02–08.11); дата экзамена вписана в `daily-plan.md`
 - [ ] WB / Сбер / МТС — поданы (16–22.11)
 - [ ] Авито — проверена волна, подана
 - [ ] Яндекс — анкета 30.11, тест сдан до 06.12
@@ -139,20 +139,20 @@
 
 Приоритет 1 — **отборочный экзамен**:
 
-- [ ] 1. [Hash Map / Set](patterns/01_hash_map.md)
-- [ ] 2. [Two Pointers](patterns/02_two_pointers.md)
-- [ ] 3. [Sliding Window](patterns/03_sliding_window.md)
-- [ ] 4. [Binary Search](patterns/04_binary_search.md) (+ по ответу)
-- [ ] 5. [Stack / Monotonic Stack](patterns/05_stack.md)
-- [ ] 6. [Prefix Sums / Intervals](patterns/06_prefix_sums.md)
+- [ ] 1. [Hash Map / Set](patterns/01-hash-map.md)
+- [ ] 2. [Two Pointers](patterns/02-two-pointers.md)
+- [ ] 3. [Sliding Window](patterns/03-sliding-window.md)
+- [ ] 4. [Binary Search](patterns/04-binary-search.md) (+ по ответу)
+- [ ] 5. [Stack / Monotonic Stack](patterns/05-stack.md)
+- [ ] 6. [Prefix Sums / Intervals](patterns/06-prefix-sums.md)
 
 Приоритет 2 — **технические секции**:
 
-- [ ] 7. [Fast & Slow Pointers / связные списки](patterns/07_fast_slow.md)
-- [ ] 8. [Деревья: BFS / DFS](patterns/08_trees.md)
-- [ ] 9. [Графы: BFS / DFS](patterns/09_graphs.md) (+ топосорт, Дейкстра, Union-Find)
-- [ ] 10. [Heap / Top-K](patterns/10_heap_topk.md)
-- [ ] 11. [Backtracking + DP](patterns/11_backtracking_dp.md) (≥15 задач динамики)
+- [ ] 7. [Fast & Slow Pointers / связные списки](patterns/07-fast-slow.md)
+- [ ] 8. [Деревья: BFS / DFS](patterns/08-trees.md)
+- [ ] 9. [Графы: BFS / DFS](patterns/09-graphs.md) (+ топосорт, Дейкстра, Union-Find)
+- [ ] 10. [Heap / Top-K](patterns/10-heap-topk.md)
+- [ ] 11. [Backtracking + DP](patterns/11-backtracking-dp.md) (≥15 задач динамики)
 
 Прогресс задач: `0 / ~120`.
 
@@ -217,7 +217,7 @@ Python-минимум для задач: `list/dict/set/tuple`, срезы, `enu
 - [ ] `almanako.ru` причёсан: короткие описания приложений, всё открывается и работает
 - [ ] `ARCHITECTURE.md` в almanako — стек, схема сервисов, ключевые решения
 - [ ] Мониторинг на проде (Prometheus + Grafana) и бэкапы Postgres с проверкой восстановления —
-      реальный инфраструктурный опыт для резюме (трек 5 в `GROWTH_PLAN.md`)
+      реальный инфраструктурный опыт для резюме (трек 5 в `growth-plan.md`)
 
 ---
 
@@ -228,7 +228,7 @@ Python-минимум для задач: `list/dict/set/tuple`, срезы, `enu
 - **LeetCode** — Top Interview 150 / по тегам (названия задач в `patterns/`).
 - **NeetCode** (neetcode.io) — паттерны и разборы.
 - **Тренировки по алгоритмам от Яндекса** — бесплатно.
-- Бэкенд-темы под секции (SQL, FastAPI, HTTP, архитектура) — `BACKEND_ROADMAP.md`.
+- Бэкенд-темы под секции (SQL, FastAPI, HTTP, архитектура) — `backend-roadmap.md`.
 
 **Продажи подписок tutorejo — после оффера**, не раньше.
 

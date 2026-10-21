@@ -1,7 +1,7 @@
 # Деревья BFS / DFS — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/08_trees.md`](../../docs/patterns/08_trees.md)**.
+**[`docs/patterns/08-trees.md`](../../docs/patterns/08-trees.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

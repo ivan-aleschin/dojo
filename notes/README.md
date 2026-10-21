@@ -7,12 +7,12 @@
 
 | Файл | Когда | Шаблон |
 |---|---|---|
-| `YYYY-MM-DD_<паттерн>.md` | в конце каждого учебного дня, 5 минут | [`day_notes.md`](../docs/templates/day_notes.md) |
-| `YYYY-MM-DD_mock.md` | после каждого mock-собеса | [`mock_interview.md`](../docs/templates/mock_interview.md) |
-| `YYYY-MM-DD_simulation.md` | после симуляции контеста | тот же `day_notes.md`, но по 5 задачам |
+| `YYYY-MM-DD-<паттерн>.md` | в конце каждого учебного дня, 5 минут | [`day-notes.md`](../docs/templates/day-notes.md) |
+| `YYYY-MM-DD-mock.md` | после каждого mock-собеса | [`mock-interview.md`](../docs/templates/mock-interview.md) |
+| `YYYY-MM-DD-simulation.md` | после симуляции контеста | тот же `day-notes.md`, но по 5 задачам |
 | `interviews/<компания>.md` | после каждой реальной секции | что спрашивали, что не смог, что учить |
 
-Пример имени: `2026-08-27_hash_map.md`, `2026-09-06_simulation.md`,
+Пример имени: `2026-10-26-hash-map.md`, `2026-11-08-simulation.md`,
 `interviews/tbank.md`.
 
 ## Зачем именно так

@@ -1,7 +1,7 @@
 # Prefix Sums / Intervals — решения
 
 Теория, разобранный эталон и типичные ошибки — в уроке
-**[`docs/patterns/06_prefix_sums.md`](../../docs/patterns/06_prefix_sums.md)**.
+**[`docs/patterns/06-prefix-sums.md`](../../docs/patterns/06-prefix-sums.md)**.
 Здесь только код: одна задача = одна папка `NN_имя/solution.py`.
 
 ## Прогресс

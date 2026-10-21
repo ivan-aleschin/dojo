@@ -1,19 +1,19 @@
 # python_drills — тренировка по Python
 
-Сюда пишешь мини-задачи из модулей [`docs/python/`](../docs/python/01_basics_types.md).
+Сюда пишешь мини-задачи из модулей [`docs/python/`](../docs/python/01-basics-types.md).
 Один модуль = один файл. Файл заранее заведён, в нём шапка со списком задач —
 дописываешь решения прямо под ними.
 
 | Файл | Модуль | Тема |
 |---|---|---|
-| `01_basics_types.py` | [01](../docs/python/01_basics_types.md) | числа, деление, строки, срезы |
-| `02_collections.py` | [02](../docs/python/02_collections.md) | list / dict / set / tuple, comprehensions |
-| `03_functions_idioms.py` | [03](../docs/python/03_functions_idioms.md) | enumerate, zip, sorted(key=), nonlocal |
-| `04_stdlib_algo.py` | [04](../docs/python/04_stdlib_algo.md) | Counter, defaultdict, deque, heapq, bisect |
-| `05_oop_and_typing.py` | [05](../docs/python/05_oop_and_typing.md) | классы, ListNode/TreeNode, dataclass |
-| `06_io_contest.py` | [06](../docs/python/06_io_contest.md) | чтение stdin, шаблон контеста |
-| `07_gotchas.py` | [07](../docs/python/07_gotchas.md) | грабли, самотест |
-| `08_complexity.py` | [08](../docs/python/08_complexity.md) | оценка сложности вслух |
+| `01_basics_types.py` | [01](../docs/python/01-basics-types.md) | числа, деление, строки, срезы |
+| `02_collections.py` | [02](../docs/python/02-collections.md) | list / dict / set / tuple, comprehensions |
+| `03_functions_idioms.py` | [03](../docs/python/03-functions-idioms.md) | enumerate, zip, sorted(key=), nonlocal |
+| `04_stdlib_algo.py` | [04](../docs/python/04-stdlib-algo.md) | Counter, defaultdict, deque, heapq, bisect |
+| `05_oop_and_typing.py` | [05](../docs/python/05-oop-and-typing.md) | классы, ListNode/TreeNode, dataclass |
+| `06_io_contest.py` | [06](../docs/python/06-io-contest.md) | чтение stdin, шаблон контеста |
+| `07_gotchas.py` | [07](../docs/python/07-gotchas.md) | грабли, самотест |
+| `08_complexity.py` | [08](../docs/python/08-complexity.md) | оценка сложности вслух |
 
 ## Как работать
 

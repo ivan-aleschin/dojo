@@ -6,11 +6,11 @@
 
 | Файл | Что внутри |
 |---|---|
-| [`DAILY_PLAN.md`](DAILY_PLAN.md) | что делать каждую неделю: заявки, паттерны, симуляции, mock-собесы |
-| [`PREP_PLAN.md`](PREP_PLAN.md) | стратегия, компании и дедлайны, режим дня, прогресс по паттернам |
-| [`GROWTH_PLAN.md`](GROWTH_PLAN.md) | годовой трек фундамента: книги, тренажёры, работа с ИИ |
-| [`RESUME.md`](RESUME.md) | резюме |
-| [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) | бэкенд-темы на поздние секции: SQL, FastAPI, системный дизайн |
+| [`daily-plan.md`](daily-plan.md) | что делать каждую неделю: заявки, паттерны, симуляции, mock-собесы |
+| [`prep-plan.md`](prep-plan.md) | стратегия, компании и дедлайны, режим дня, прогресс по паттернам |
+| [`growth-plan.md`](growth-plan.md) | годовой трек фундамента: книги, тренажёры, работа с ИИ |
+| [`resume.md`](resume.md) | резюме |
+| [`backend-roadmap.md`](backend-roadmap.md) | бэкенд-темы на поздние секции: SQL, FastAPI, системный дизайн |
 
 **Курсы и справочники:** `python/`, `patterns/`, `templates/`, `companies/` — ниже.
 
@@ -18,15 +18,15 @@
 
 | Если тебе нужно | Иди сюда |
 |---|---|
-| понять, что делать сегодня | [`DAILY_PLAN.md`](DAILY_PLAN.md) |
-| вспомнить Python перед алгоритмами (2 дня) | [`python/01_basics_types.md`](python/01_basics_types.md) |
-| изучить паттерн и порешать по нему задачи | [`patterns/01_hash_map.md`](patterns/01_hash_map.md) |
+| понять, что делать сегодня | [`daily-plan.md`](daily-plan.md) |
+| вспомнить Python перед алгоритмами (2 дня) | [`python/01-basics-types.md`](python/01-basics-types.md) |
+| изучить паттерн и порешать по нему задачи | [`patterns/01-hash-map.md`](patterns/01-hash-map.md) |
 | оформить задачу, конспект или mock-собес | [`templates/`](templates/README.md) |
 | понять, куда подаваться и когда | [`companies/shortlist.md`](companies/shortlist.md) |
-| стратегия, дедлайны, прогресс | [`PREP_PLAN.md`](PREP_PLAN.md) |
-| подготовиться к секции про бэкенд | [`BACKEND_ROADMAP.md`](BACKEND_ROADMAP.md) |
-| книги, тренажёры, фундамент на год | [`GROWTH_PLAN.md`](GROWTH_PLAN.md) |
-| обновить резюме | [`RESUME.md`](RESUME.md) |
+| стратегия, дедлайны, прогресс | [`prep-plan.md`](prep-plan.md) |
+| подготовиться к секции про бэкенд | [`backend-roadmap.md`](backend-roadmap.md) |
+| книги, тренажёры, фундамент на год | [`growth-plan.md`](growth-plan.md) |
+| обновить резюме | [`resume.md`](resume.md) |
 
 ## 1. `python/` — экспресс-повторение Python (3 вечера)
 
@@ -36,14 +36,14 @@
 
 | # | Модуль | О чём |
 |---|---|---|
-| 01 | [Базовые типы, строки, срезы](python/01_basics_types.md) | числа, деление, строки, f-строки, срезы |
-| 02 | [Коллекции](python/02_collections.md) | list / dict / set / tuple, comprehensions |
-| 03 | [Функции и идиомы](python/03_functions_idioms.md) | enumerate, zip, sorted(key=), распаковка, lambda |
-| 04 | [Стандартная библиотека для алгоритмов](python/04_stdlib_algo.md) | collections, heapq, bisect, itertools, math |
-| 05 | [Классы и типы](python/05_oop_and_typing.md) | class, dataclass, ListNode/TreeNode, аннотации |
-| 06 | [Ввод-вывод и контест](python/06_io_contest.md) | input, sys.stdin, рекурсия, шаблон решения, doctest |
-| 07 | [Грабли Python](python/07_gotchas.md) | мутабельные дефолты, копии, is vs ==, сортировка |
-| 08 | [Сложность O(...)](python/08_complexity.md) | как считать и как называть вслух на собесе |
+| 01 | [Базовые типы, строки, срезы](python/01-basics-types.md) | числа, деление, строки, f-строки, срезы |
+| 02 | [Коллекции](python/02-collections.md) | list / dict / set / tuple, comprehensions |
+| 03 | [Функции и идиомы](python/03-functions-idioms.md) | enumerate, zip, sorted(key=), распаковка, lambda |
+| 04 | [Стандартная библиотека для алгоритмов](python/04-stdlib-algo.md) | collections, heapq, bisect, itertools, math |
+| 05 | [Классы и типы](python/05-oop-and-typing.md) | class, dataclass, ListNode/TreeNode, аннотации |
+| 06 | [Ввод-вывод и контест](python/06-io-contest.md) | input, sys.stdin, рекурсия, шаблон решения, doctest |
+| 07 | [Грабли Python](python/07-gotchas.md) | мутабельные дефолты, копии, is vs ==, сортировка |
+| 08 | [Сложность O(...)](python/08-complexity.md) | как считать и как называть вслух на собесе |
 
 ## 2. `patterns/` — 11 паттернов алгоритмов
 
@@ -60,17 +60,17 @@
 
 | # | Паттерн | Приоритет |
 |---|---|---|
-| 01 | [Hash Map / Set](patterns/01_hash_map.md) | отбор |
-| 02 | [Two Pointers](patterns/02_two_pointers.md) | отбор |
-| 03 | [Sliding Window](patterns/03_sliding_window.md) | отбор |
-| 04 | [Binary Search](patterns/04_binary_search.md) | отбор |
-| 05 | [Stack / Monotonic Stack](patterns/05_stack.md) | отбор |
-| 06 | [Prefix Sums / Intervals](patterns/06_prefix_sums.md) | отбор |
-| 07 | [Fast & Slow / Связные списки](patterns/07_fast_slow.md) | секции |
-| 08 | [Деревья BFS/DFS](patterns/08_trees.md) | секции |
-| 09 | [Графы BFS/DFS](patterns/09_graphs.md) | секции |
-| 10 | [Heap / Top-K](patterns/10_heap_topk.md) | секции |
-| 11 | [Backtracking + DP](patterns/11_backtracking_dp.md) | секции |
+| 01 | [Hash Map / Set](patterns/01-hash-map.md) | отбор |
+| 02 | [Two Pointers](patterns/02-two-pointers.md) | отбор |
+| 03 | [Sliding Window](patterns/03-sliding-window.md) | отбор |
+| 04 | [Binary Search](patterns/04-binary-search.md) | отбор |
+| 05 | [Stack / Monotonic Stack](patterns/05-stack.md) | отбор |
+| 06 | [Prefix Sums / Intervals](patterns/06-prefix-sums.md) | отбор |
+| 07 | [Fast & Slow / Связные списки](patterns/07-fast-slow.md) | секции |
+| 08 | [Деревья BFS/DFS](patterns/08-trees.md) | секции |
+| 09 | [Графы BFS/DFS](patterns/09-graphs.md) | секции |
+| 10 | [Heap / Top-K](patterns/10-heap-topk.md) | секции |
+| 11 | [Backtracking + DP](patterns/11-backtracking-dp.md) | секции |
 
 **«Отбор»** — то, что реально встречается в отборочных онлайн-экзаменах
 (Т-Банк, Авито, МТС). **«Секции»** — живые технические собеседования после отбора.
@@ -85,7 +85,7 @@
 
 [`companies/shortlist.md`](companies/shortlist.md) — шорт-лист работодателей
 с обоснованием под цель «переезд в Сербию через ~3 года».
-[`companies/oriocs_list.md`](companies/oriocs_list.md) — полный список компаний
+[`companies/oriocs-list.md`](companies/oriocs-list.md) — полный список компаний
 с договором о практике из ОРИОКС, разобранный по категориям.
 
 ## Куда писать решения
