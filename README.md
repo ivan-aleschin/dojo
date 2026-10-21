@@ -43,7 +43,7 @@ dojo/
 │   ├── backend-roadmap.md
 │   ├── python/             # 8 модулей экспресс-повторения Python (2 дня)
 │   ├── patterns/           # 11 уроков по паттернам: теория, эталон, задачи, чек-лист
-│   ├── templates/          # заготовки: задача, эталон, стаб, контест, конспект, mock
+│   ├── templates/          # заготовки: задача, эталон, стаб, контест, симуляция, mock
 │   └── companies/          # куда подаваться + разбор списка ОРИОКС
 │
 ├── algorithms/             # РЕШЕНИЯ ПО ПАТТЕРНАМ — 11 папок, в каждой чек-лист задач
@@ -52,7 +52,7 @@ dojo/
 ├── python_drills/          # ТРЕНИРОВКА ПО PYTHON — файл на каждый модуль docs/python
 │   └── <NN_модуль>.py
 │
-├── notes/                  # КОНСПЕКТЫ: день, mock-собес, разборы реальных секций
+├── journal/                # ЖУРНАЛ ТРЕНИРОВОК: mock, симуляции, реальные секции, стажировка
 │   └── interviews/
 │
 ├── coderun/                # задачи с coderun.yandex.ru
@@ -70,9 +70,10 @@ dojo/
 | мини-задачи из модулей Python | [`python_drills/<NN_модуль>.py`](python_drills/README.md) | файлы уже заведены, задачи в шапке |
 | задачи по паттерну | [`algorithms/<паттерн>/<NN_имя>/solution.py`](algorithms/hash_map/README.md) | [`docs/templates/solution_stub.py`](docs/templates/solution_stub.py) |
 | задача с контеста | `coderun/<NNNN_имя>/` | [`docs/templates/coderun-task.md`](docs/templates/coderun-task.md) |
-| конспект дня | [`notes/YYYY-MM-DD-<паттерн>.md`](notes/README.md) | [`docs/templates/day-notes.md`](docs/templates/day-notes.md) |
-| mock-собес | `notes/YYYY-MM-DD-mock.md` | [`docs/templates/mock-interview.md`](docs/templates/mock-interview.md) |
-| разбор реальной секции | `notes/interviews/<компания>.md` | — |
+| конспект темы | Obsidian, своими словами | — |
+| симуляция контеста | [`journal/simulations/YYYY-MM-DD.md`](journal/README.md) | [`docs/templates/simulation.md`](docs/templates/simulation.md) |
+| mock-собес | `journal/mock/YYYY-MM-DD.md` | [`docs/templates/mock-interview.md`](docs/templates/mock-interview.md) |
+| разбор реальной секции | `journal/interviews/<компания>.md` | — |
 
 ## Как устроена работа над задачей
 

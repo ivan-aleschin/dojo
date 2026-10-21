@@ -21,7 +21,7 @@
 | понять, что делать сегодня | [`daily-plan.md`](daily-plan.md) |
 | вспомнить Python перед алгоритмами (2 дня) | [`python/01-basics-types.md`](python/01-basics-types.md) |
 | изучить паттерн и порешать по нему задачи | [`patterns/01-hash-map.md`](patterns/01-hash-map.md) |
-| оформить задачу, конспект или mock-собес | [`templates/`](templates/README.md) |
+| оформить задачу, симуляцию или mock-собес | [`templates/`](templates/README.md) |
 | понять, куда подаваться и когда | [`companies/shortlist.md`](companies/shortlist.md) |
 | стратегия, дедлайны, прогресс | [`prep-plan.md`](prep-plan.md) |
 | подготовиться к секции про бэкенд | [`backend-roadmap.md`](backend-roadmap.md) |
@@ -78,7 +78,7 @@
 ## 3. `templates/` — заготовки
 
 [`templates/README.md`](templates/README.md) — шаблоны задачи, эталона, стаба,
-контестного решения (stdin→stdout), конспекта дня и бланка mock-собеса.
+контестного решения (stdin→stdout), разбора симуляции и бланка mock-собеса.
 Копируешь и заполняешь, а не выдумываешь формат каждый раз.
 
 ## 4. `companies/` — куда подаваться
@@ -94,7 +94,8 @@
 |---|---|
 | мини-задачи из `python/` | `python_drills/<NN_модуль>.py` (файлы уже заведены) |
 | задачи из `patterns/` | `algorithms/<паттерн>/<NN_имя>/solution.py`, прогресс — в `README.md` папки паттерна |
-| конспект дня и mock-собесы | `notes/` по шаблонам из `templates/` |
+| разборы mock, симуляций и реальных секций | `journal/` по шаблонам из `templates/` |
+| конспект темы | Obsidian |
 
 ## Как решать задачи
 
