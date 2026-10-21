@@ -10,7 +10,7 @@
 | [`solution_reference.py`](solution_reference.py) | `<...>/<NN_имя>/solution.py` | **эталон**: рабочее решение + почему оно корректно |
 | [`contest_solution.py`](contest_solution.py) | черновик на время контеста | формат stdin→stdout отборочных экзаменов |
 | [`simulation.md`](simulation.md) | `journal/simulations/YYYY-MM-DD.md` | разбор симуляции контеста, 10 минут |
-| [`mock-interview.md`](mock-interview.md) | `journal/mock/YYYY-MM-DD.md` | бланк тренировочной секции (протокол — `../prep-plan.md` §6) |
+| [`mock-interview.md`](mock-interview.md) | `journal/mock/YYYY-MM-DD.md` | бланк тренировочной секции (протокол — `../strategy.md` §6) |
 
 Соглашения репозитория (имена папок, доктесты, запуск) — в
 [корневом README](../../README.md) и `CLAUDE.md`.

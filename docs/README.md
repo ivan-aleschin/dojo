@@ -6,11 +6,11 @@
 
 | Файл | Что внутри |
 |---|---|
-| [`daily-plan.md`](daily-plan.md) | что делать каждую неделю: заявки, паттерны, симуляции, mock-собесы |
-| [`prep-plan.md`](prep-plan.md) | стратегия, компании и дедлайны, режим дня, прогресс по паттернам |
-| [`growth-plan.md`](growth-plan.md) | годовой трек фундамента: книги, тренажёры, работа с ИИ |
+| [`schedule.md`](schedule.md) | что делать каждую неделю: заявки, паттерны, симуляции, mock-собесы |
+| [`strategy.md`](strategy.md) | стратегия, компании и дедлайны, режим дня, прогресс по паттернам |
+| [`study-plan.md`](study-plan.md) | годовой трек фундамента: книги, тренажёры, работа с ИИ |
 | [`resume.md`](resume.md) | резюме |
-| [`backend-roadmap.md`](backend-roadmap.md) | бэкенд-темы на поздние секции: SQL, FastAPI, системный дизайн |
+| [`backend-topics.md`](backend-topics.md) | бэкенд-темы на поздние секции: SQL, FastAPI, системный дизайн |
 
 **Курсы и справочники:** `python/`, `patterns/`, `templates/`, `companies/` — ниже.
 
@@ -18,14 +18,14 @@
 
 | Если тебе нужно | Иди сюда |
 |---|---|
-| понять, что делать сегодня | [`daily-plan.md`](daily-plan.md) |
+| понять, что делать сегодня | [`schedule.md`](schedule.md) |
 | вспомнить Python перед алгоритмами (2 дня) | [`python/01-basics-types.md`](python/01-basics-types.md) |
 | изучить паттерн и порешать по нему задачи | [`patterns/01-hash-map.md`](patterns/01-hash-map.md) |
 | оформить задачу, симуляцию или mock-собес | [`templates/`](templates/README.md) |
 | понять, куда подаваться и когда | [`companies/shortlist.md`](companies/shortlist.md) |
-| стратегия, дедлайны, прогресс | [`prep-plan.md`](prep-plan.md) |
-| подготовиться к секции про бэкенд | [`backend-roadmap.md`](backend-roadmap.md) |
-| книги, тренажёры, фундамент на год | [`growth-plan.md`](growth-plan.md) |
+| стратегия, дедлайны, прогресс | [`strategy.md`](strategy.md) |
+| подготовиться к секции про бэкенд | [`backend-topics.md`](backend-topics.md) |
+| книги, тренажёры, фундамент на год | [`study-plan.md`](study-plan.md) |
 | обновить резюме | [`resume.md`](resume.md) |
 
 ## 1. `python/` — экспресс-повторение Python (3 вечера)
