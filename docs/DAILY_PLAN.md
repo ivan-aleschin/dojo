@@ -1,246 +1,164 @@
-# DAILY_PLAN — подготовка по дням (старт 25 августа 2026, Вт)
+# DAILY_PLAN — подготовка по неделям (старт 22 октября 2026, Чт)
 
-Формат дня и чек-листы — в [`PREP_PLAN.md`](PREP_PLAN.md). Учебные материалы рядом:
-[`python/`](python/01_basics_types.md) — повторение Python,
-[`patterns/`](patterns/01_hash_map.md) — 11 паттернов.
-Здесь — что именно делать каждый день.
+Стратегия, компании и режим дня — в [`PREP_PLAN.md`](PREP_PLAN.md).
+Годовой фундамент — в [`GROWTH_PLAN.md`](GROWTH_PLAN.md).
+Материалы: [`python/`](python/01_basics_types.md), [`patterns/`](patterns/01_hash_map.md).
 
 `(E)` = easy, `(M)` = medium, `[stretch]` = если осталось время.
 
-**Объём буднего дня — 4–5 задач за ~2.5 ч**, разбито на «окна» между проверками
-агентов на `almanako`.
+**Неделя:** пн/вт/пт/чт вечер — 2–3 задачи (~1.5–2 ч), **ср — 4–5 задач (3–4 ч)**,
+вс — 3–4 задачи или симуляция/mock, **сб — отдых** (пары).
+Учебные блоки по 30–45 мин между проверками агентов.
 
 Каждая задача: уточнения → идея и `O()` вслух → код → доктест → разбор со мной.
 
 ---
 
-## 🔥 День 0 — сегодня, до всякой учёбы
+## Неделя 0 — 21–25.10 · старт
 
-Дедлайны не ждут, пока ты доучишь паттерны. Подробное обоснование, кто есть кто, —
-в `companies/shortlist.md`.
+**Ср 21.10 — организационное (~1 ч)**
+- [ ] `RESUME.md` обновлён: almanako, iskra, инфраструктура, работа с агентами
+- [ ] Проверены открытые волны: Т-Банк, Авито, МТС, WB, Сбер, Ozon Camp (даты → `PREP_PLAN.md` §3)
+- [ ] Предупредить кафедру: смена места практики — вероятно в феврале
 
-**Волна 1 — на этой неделе** (заявка либо горит, либо ничего не запускает):
-
-- [ ] **Авито — заявка до 30 августа 2026.** Единственный жёсткий дедлайн.
-      Старт стажировки октябрь, 9 мес, гибрид/удалёнка, от 25 ч/нед.
-      Backend закрывается быстрее прочих направлений — подавать сегодня, не 29-го.
-- [ ] **Т-Банк (Т-Старт).** Дедлайна нет, но дата экзамена отсчитывается от даты
-      подачи. Подаём сейчас, чтобы экзамен пришёлся на начало сентября.
-      **Вписать сюда дату из личного кабинета, когда придёт:** `______`
-- [ ] **Яндекс** — подать анкету на бэкенд.
-      ⚠️ **Контест НЕ открывать.** Окно 7 дней запускаешь сам, открываем
-      14–16 сентября, после backtracking и DP. Подача и открытие — разные кнопки.
-- [ ] Резюме (`RESUME.md`) актуально и приложено ко всем заявкам.
-
-**Волна 2 — 7–10 сентября**, после симуляции #2. У них онлайн-тест приходит
-через несколько дней после заявки, поэтому входим уже в форме:
-
-- [ ] **Wildberries (RWB)** — Go / Python / DevOps, 80–120 тыс. По стеку —
-      прямое попадание в твой профиль.
-- [ ] **Сбер (SberSeasons)** — отбор занимает 2–4 недели, самый быстрый цикл.
-- [ ] **МТС Старт** — осенне-зимняя волна, старт в ноябре; вакансии обновляются
-      еженедельно, проверять по понедельникам.
-
-**Отдельно, конец ноября:** Ozon — подача до 5 декабря, старт февраль 2027.
-Страховка, если осень не дала оффера.
-
-> Даты зафиксированы 24 августа 2026. У Т-Банка, МТС, Wildberries и Сбера наборы
-> скользящие → проверка статусов и новых окон по понедельникам, 10 минут.
-
----
-
-## Фаза 0 — Python + отборочные паттерны (25 августа → 6 сентября)
-
-Цель фазы: **войти в отборочный экзамен Т-Банка в форме** и параллельно
-закрыть онлайн-тесты Авито и МТС.
-
-### Блок A — экспресс-повторение Python (2 дня)
-
-**День 1 — Вт 25.08 · `python/` модули 01–04 · ~2.5 ч**
-Читать и **набирать руками** (не копипастить), делать мини-задачи из каждого модуля.
-1. `01_basics_types.md` — числа, деление, строки, срезы
-2. `02_collections.md` — list/dict/set/tuple, comprehensions
-3. `03_functions_idioms.md` — enumerate, zip, sorted(key=), nonlocal
-4. `04_stdlib_algo.md` — Counter, defaultdict, deque, heapq, bisect
-- [ ] Мини-задачи всех четырёх модулей сделаны
-
-**День 2 — Ср 26.08 · `python/` модули 05–08 + разминка · ~3 ч**
-1. `05_oop_and_typing.md` — класс, ListNode, TreeNode, dataclass
-2. `06_io_contest.md` — чтение stdin, шаблон контестного решения, doctest
-3. `07_gotchas.md` — грабли (обязательно пройти самотест в конце)
-4. `08_complexity.md` — O(...) и как её называть вслух
-Разминка, 3 задачи на скорость (по 10 мин, без подсказок):
-Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
-- [ ] Самотест из модуля 07 пройден без ошибок
+**Чт 22.10 · `python/` 01–02** — набирать руками, мини-задачи в `python_drills/`
+**Пт 23.10 · `python/` 03–04** — enumerate/zip/sorted(key=), Counter/deque/heapq/bisect
+**Вс 25.10 · `python/` 05–08 + разминка**
+- 05 классы/ListNode/TreeNode, 06 stdin и контестный шаблон, 07 грабли (самотест!), 08 O(...)
+- Разминка на скорость (по 10 мин): Two Sum (E), Contains Duplicate (E), Valid Anagram (E)
+- [ ] Самотест модуля 07 без ошибок
 - [ ] Контестный шаблон набран руками (сверить с `templates/contest_solution.py`)
 
-### Блок B — паттерны отбора (27 августа → 1 сентября)
+---
 
-**День 3 — Чт 27.08 · Hash Map / Set · 5 задач** → `patterns/01_hash_map.md`
-1. Single Number (E)
-2. Intersection of Two Arrays (E)
-3. Group Anagrams (M)
-4. Isomorphic Strings (M)
-5. Longest Consecutive Sequence (M)
-*(Two Sum / Contains Duplicate / Valid Anagram уже сделаны 26.08 как разминка)*
+## Неделя 1 — 26.10–01.11 · Hash Map, Two Pointers, Sliding Window, Binary Search
 
-**День 4 — Пт 28.08 · Two Pointers · 5 задач** → `patterns/02_two_pointers.md`
-1. Valid Palindrome (E) — *стаб уже в репо*
-2. Remove Duplicates from Sorted Array (E)
-3. Squares of a Sorted Array (E)
-4. Merge Sorted Array (E)
-5. Container With Most Water (M)
-[stretch] 3Sum (M)
+- **Пн 26.10 · Hash Map** → `patterns/01_hash_map.md`: Single Number (E), Intersection of Two Arrays (E)
+- **Вт 27.10 · Hash Map:** Group Anagrams (M), Isomorphic Strings (M), Longest Consecutive Sequence (M)
+- **Ср 28.10 · Two Pointers** → `patterns/02_two_pointers.md`:
+  Valid Palindrome (E, *стаб уже в репо*), Remove Duplicates (E), Squares of a Sorted Array (E),
+  Merge Sorted Array (E), Container With Most Water (M), [stretch] 3Sum (M)
+- **Чт 29.10 · Sliding Window** → `patterns/03_sliding_window.md`:
+  Maximum Average Subarray I (E), Best Time to Buy and Sell Stock (E)
+- **Пт 30.10 · Sliding Window:** Longest Substring Without Repeating (M),
+  Minimum Size Subarray Sum (M), Longest Repeating Character Replacement (M)
+- **Вс 01.11 · Binary Search** → `patterns/04_binary_search.md`:
+  Binary Search (E, без `bisect`), Search Insert Position (E), First and Last Position (M),
+  Search in Rotated Sorted Array (M), Koko Eating Bananas (M) — бинпоиск по ответу
 
-**День 5 — Сб 29.08 · Sliding Window · 5 задач** → `patterns/03_sliding_window.md`
-1. Maximum Average Subarray I (E)
-2. Best Time to Buy and Sell Stock (E)
-3. Longest Substring Without Repeating Characters (M)
-4. Minimum Size Subarray Sum (M)
-5. Longest Repeating Character Replacement (M)
-
-**День 6 — Вс 30.08 · Binary Search · 5 задач** → `patterns/04_binary_search.md`
-1. Binary Search (E) — руками, без `bisect`
-2. Search Insert Position (E)
-3. Find First and Last Position (M)
-4. Search in Rotated Sorted Array (M)
-5. Koko Eating Bananas (M) — бинпоиск по ответу
-- [ ] ⚠️ Последний день подачи заявки в Авито — если ещё не подана, подать сейчас
-
-**День 7 — Пн 31.08 · Stack / Monotonic Stack · 5 задач** → `patterns/05_stack.md`
-1. Valid Parentheses (E)
-2. Next Greater Element I (E)
-3. Min Stack (M)
-4. Evaluate Reverse Polish Notation (M)
-5. Daily Temperatures (M)
-
-**День 8 — Вт 01.09 · Prefix Sums / Intervals · 5 задач** → `patterns/06_prefix_sums.md`
-Учебный год начался: сегодня и дальше по будням — вечерний блок ~2 ч.
-1. Running Sum of 1d Array (E)
-2. Find Pivot Index (E)
-3. Product of Array Except Self (M)
-4. Subarray Sum Equals K (M)
-5. Merge Intervals (M)
-
-> ✅ К 1 сентября закрыты 6 паттернов отбора — ровно то, что спрашивают
-> на онлайн-экзаменах.
-
-### Блок C — симуляции и добор перед экзаменом (2 → 6 сентября)
-
-**День 9 — Ср 02.09 · СИМУЛЯЦИЯ #1 · 5 задач за раз (~3 ч)**
-Среда — главный учебный день недели (3–4 ч свободных).
-Режим контеста: 5 смешанных задач по паттернам 1–6, без подсказок, время засекается.
-Ввод-вывод — **через stdin**, как на реальном экзамене (шаблон `templates/contest_solution.py`, разбор — `python/06_io_contest.md`).
-Разбор: что затормозило, какие паттерны просели.
-
-**День 10 — Чт 03.09 · Разбор симуляции + добор (~2 ч, вечер)**
-Только те паттерны, что просели вчера. 3–4 задачи.
-
-**День 11 — Пт 04.09 · Fast & Slow + связные списки · 4 задачи (~2 ч)**
-→ `patterns/07_fast_slow.md`
-1. Reverse Linked List (E)
-2. Linked List Cycle (E)
-3. Remove Nth Node From End (M)
-4. Palindrome Linked List (M)
-*(Middle of the Linked List уже решён в `coderun/0001`)*
-
-**День 12 — Сб 05.09 · Деревья BFS/DFS · 4 задачи (~2 ч, вечер)**
-→ `patterns/08_trees.md`
-1. Maximum Depth of Binary Tree (E)
-2. Invert Binary Tree (E)
-3. Binary Tree Level Order Traversal (M)
-4. Validate Binary Search Tree (M)
-
-**День 13 — Вс 06.09 · СИМУЛЯЦИЯ #2 · боевой контест (до 4 ч)**
-5 задач в условиях реального отборочного, с таймером и stdin.
-Разбор — это репетиция экзамена.
-
-> ✅ **К 6 сентября: 8 паттернов, ~55 задач, две симуляции. Готов к экзамену Т-Банка.**
+Фон: *Грокаем алгоритмы* — главы под паттерны недели.
 
 ---
 
-## Фаза 1 — Сентябрь: добить паттерны и закрыть все контесты
+## Неделя 2 — 02–08.11 · Stack, Prefix Sums, симуляция #1
 
-Расписание 4 курса: пн/вт/пт — практическая подготовка весь день, чт — военка,
-сб — пары. **Свободны: среда, вечера, воскресенье.** Будни — ~1.5–2 ч,
-среда — 3–4 ч (главный учебный день), воскресенье — 2–3 ч.
+- [ ] **Пн 02.11 — подать заявку в Т-Банк.** Экзамен ≈ через 2 недели; дату вписать сюда: `______`
+- **Пн 02.11 · Stack** → `patterns/05_stack.md`: Valid Parentheses (E), Next Greater Element I (E)
+- **Вт 03.11 · Stack:** Min Stack (M), Evaluate RPN (M), Daily Temperatures (M)
+- **Ср 04.11 · Prefix Sums / Intervals** → `patterns/06_prefix_sums.md`:
+  Running Sum (E), Find Pivot Index (E), Product of Array Except Self (M),
+  Subarray Sum Equals K (M), Merge Intervals (M)
+- **Чт 05.11 – Пт 06.11 · добор** — 2–3 задачи по самому слабому из паттернов 1–6
+- **Вс 08.11 · СИМУЛЯЦИЯ #1** — 5 смешанных задач по паттернам 1–6, таймер, stdin
+  (`templates/contest_solution.py`). Разбор: что затормозило.
 
-**Неделя 07–13.09 — Графы + Heap/Top-K**
-- Ср 09.09 (большой блок): Графы → `patterns/09_graphs.md`
-  Flood Fill (E), Number of Islands (M), Rotting Oranges (M), Course Schedule (M)
-- Вечера: Clone Graph (M), 01 Matrix (M), Pacific Atlantic (M)
-- Вс 13.09: Heap/Top-K → `patterns/10_heap_topk.md`
-  Last Stone Weight (E), Kth Largest (M), Top K Frequent (M), K Closest Points (M)
-- [ ] Экзамен/контест Т-Банка пройден (дата — из личного кабинета)
-- [ ] Онлайн-тест Авито пройден (этап 2 отбора)
-
-**Неделя 14–20.09 — Backtracking**
-→ `patterns/11_backtracking_dp.md`, часть 1
-- Ср 16.09: Subsets, Combination Sum, Permutations
-- Вечера: Generate Parentheses, Letter Combinations, Word Search
-- Вс 20.09: Subsets II / Combination Sum II (пропуск дубликатов), Palindrome Partitioning
-- [ ] **Открыть контест Яндекса** — окно 7 дней, запускаешь сам.
-      Открывать в начале недели, чтобы выходные попали внутрь окна.
-
-**Неделя 21–27.09 — DP база (не меньше 8 задач)**
-→ `patterns/11_backtracking_dp.md`, часть 2
-- Ср 23.09: Climbing Stairs, House Robber, House Robber II, Coin Change
-- Вечера: Min Cost Climbing Stairs, Unique Paths, Minimum Path Sum
-- Вс 27.09: LIS (оба решения), Word Break
-- [ ] Контест Яндекса сдан
-
-**Неделя 28.09–04.10 — Продвинутое + первые mock-собесы**
-- Ср 30.09: Дейкстра, Union-Find, Trie
-- Вечера: LRU Cache, 2D-динамика (LCS, Edit Distance)
-- Вс 04.10: **mock-собес №1** — 2 задачи в блокноте без запуска (протокол в `PREP_PLAN.md` §7)
-
-**Параллельно весь сентябрь:**
-- [ ] Оформление практики на кафедру + предупредить Роальдовича про смену в октябре
-- [ ] Рассказ про архитектуру `almanako` на 10 минут (чек-лист в `PREP_PLAN.md` §8)
-- [ ] `ARCHITECTURE.md` в almanako — то, что даёшь ссылкой рекрутеру
-- [ ] Раз в неделю (пн) — проверка статусов заявок и новых окон МТС
-
-> ✅ **Цель сентября: все отборочные контесты закрыты.** Дальше отбор
-> уже не про алгоритмы в вакууме, а про живые секции.
+> ✅ 6 паттернов отбора закрыты, ~35 задач.
 
 ---
 
-## Фаза 2 — Октябрь: технические секции, финалы, оффер
+## Неделя 3 — 09–15.11 · Списки и деревья
 
-Новых тем почти нет. Фокус смещается на **разговорную форму**: проговаривать
-решение вслух, задавать уточняющие вопросы, называть сложность до кода.
+- **Пн 09.11 · Добор** по итогам симуляции #1 (2–3 задачи)
+- **Вт 10.11 · Fast & Slow** → `patterns/07_fast_slow.md`: Reverse Linked List (E), Linked List Cycle (E)
+- **Ср 11.11 · Списки + деревья:** Remove Nth Node From End (M), Palindrome Linked List (M);
+  → `patterns/08_trees.md`: Maximum Depth (E), Invert Binary Tree (E)
+- **Чт 12.11 · Деревья:** Level Order Traversal (M), Validate BST (M)
+- **Пт 13.11 · Деревья:** Lowest Common Ancestor (M), Diameter of Binary Tree (E)
+- **Вс 15.11 · Повторение 1–6 перед экзаменом Т-Банка:** 4 задачи на время, по одной из разных паттернов
+
+---
+
+## Неделя 4 — 16–22.11 · Графы и куча
+
+- [ ] **Подать: Wildberries, Сбер, МТС** (тест приходит через несколько дней — к этому моменту готовы)
+- [ ] **Авито** — если волна открыта, подать
+- [ ] **Экзамен Т-Банка** (дата из ЛК)
+- **Пн–Вт · Графы** → `patterns/09_graphs.md`: Flood Fill (E), Number of Islands (M), Rotting Oranges (M)
+- **Ср 18.11 · Графы:** Course Schedule (M), Clone Graph (M), 01 Matrix (M), Pacific Atlantic (M)
+- **Чт–Пт · Heap/Top-K** → `patterns/10_heap_topk.md`: Last Stone Weight (E), Kth Largest (M)
+- **Вс 22.11 · Heap:** Top K Frequent (M), K Closest Points (M), Find Median from Data Stream (H, [stretch])
+
+---
+
+## Неделя 5 — 23–29.11 · Backtracking + DP (часть 1), симуляция #2
+
+→ `patterns/11_backtracking_dp.md`
+- **Пн–Вт · Backtracking:** Subsets, Permutations, Combination Sum
+- **Ср 25.11:** Generate Parentheses, Letter Combinations, Word Search, Subsets II (дубликаты)
+- **Чт–Пт · DP база:** Climbing Stairs, House Robber, Min Cost Climbing Stairs
+- **Вс 29.11 · СИМУЛЯЦИЯ #2** — 5 задач по всем паттернам, таймер, stdin
+
+---
+
+## Неделя 6 — 30.11–06.12 · DP (часть 2) + Яндекс
+
+- [ ] **Пн 30.11 — анкета в Яндекс.** Тест — в течение недели после анкеты, сдать до 06.12
+- **Пн–Вт · DP:** House Robber II, Coin Change, Unique Paths
+- **Ср 02.12:** Minimum Path Sum, LIS (оба решения), Word Break
+- **Чт–Пт · тест Яндекса**
+- **Вс 06.12:** Partition Equal Subset Sum, LCS
+- [ ] Рассказ про almanako/iskra на 10 минут готов (`PREP_PLAN.md` §8)
+
+---
+
+## Неделя 7 — 07–13.12 · Продвинутое + mock №1
+
+- [ ] **Ozon Camp — подать** (проверить дедлайн IT-трека)
+- **Пн–Вт:** Дейкстра (Network Delay Time), Union-Find (Number of Provinces)
+- **Ср 09.12:** Trie (Implement Trie), LRU Cache, Edit Distance
+- **Чт–Пт:** SQL под секции — JOIN, GROUP BY, оконные функции (`BACKEND_ROADMAP.md` §2, pgexercises)
+- **Вс 13.12 · MOCK №1** — 2 задачи в блокноте без запуска (`PREP_PLAN.md` §6)
+
+---
+
+## Неделя 8 — 14–20.12 · Секции: бэкенд + mock №2
+
+- **Пн–Пт вечера:** бэкенд-темы под секции — HTTP и статус-коды, транзакции и уровни изоляции,
+  индексы и N+1, async/GIL (`BACKEND_ROADMAP.md` §1, 2, 8)
+- **Ср 16.12:** 3 задачи medium на время + разбор слабых паттернов
+- **Вс 20.12 · MOCK №2** — алгоритмы + 15 мин вопросов «про проект»
+
+> ✅ К 20.12: 11 паттернов, ~110 задач, 2 симуляции, 2 mock. Готов к секциям.
+
+---
+
+## 21.12–31.01 · Сессия + секции и финалы
+
+Новых тем нет. Нагрузка падает из-за сессии — держим форму, а не набираем.
 
 **Каждую неделю:**
-- 1 mock-собес со мной (воскресенье): 2 задачи в блокноте без запуска, 60–70 мин
-- 2 больших блока (среда + один вечер): добор слабых паттернов, medium за 30–35 мин
-- Повторение чек-листов из `patterns/*.md` — по одному паттерну в день,
-  вслух, без кода: триггеры, скелет, сложность
+- 1 mock (воскресенье): 2 задачи без запуска, 60–70 мин
+- 2–3 задачи medium по самому слабому паттерну
+- повторение чек-листа одного паттерна в день — вслух, без кода (5 мин)
+- понедельник: статусы заявок, новые волны
 
-**Недельные акценты:**
-- 05–11.10: деревья + графы под секции (LCA, Word Ladder, Max Path Sum)
-- 12–18.10: DP-добор до 15+ задач (Edit Distance, Partition Equal Subset Sum)
-- 19–25.10: только mock-собесы + повторение; никаких новых тем перед финалами
-- 26.10–01.11: финальные секции, ответы на офферы
+**После каждой реальной секции** — разбор в `notes/interviews/<компания>.md` в тот же день.
 
-**20 октября — контрольная точка.** Если офферов нет: в тот же день запускаем
-рассылку по малым компаниям из списка ОРИОКС (`PREP_PLAN.md` §2). Вход туда —
-примерно неделя, то есть к ноябрю место практики всё равно есть.
-
-**Ноябрь — выход на работу**, переоформление практики МИЭТ на компанию.
+**31.01.2027 — КОНТРОЛЬНАЯ ТОЧКА.**
+- Есть оффер → выход, бумага о смене места практики, `PREP_PLAN.md` §7 (как пройти стажировку).
+- Нет оффера → **план B**: февраль–март — фундамент (`GROWTH_PLAN.md`, треки 3–4) +
+  1 mock в неделю; весенние наборы на лето (март–апрель); старт июнь–июль после выпуска.
 
 ---
 
 ## Сводка по объёму
 
-| Блок | Задач |
+| Период | Задач |
 |---|---|
-| Python-разминка (26.08) | 3 |
-| 6 паттернов отбора × ~5 (27.08–01.09) | ~30 |
-| Симуляция #1 | 5 |
-| Добор после симуляции | ~4 |
-| Списки + деревья (04–05.09) | 8 |
-| Симуляция #2 | 5 |
-| **Итого к 6 сентября (экзамен Т-Банка)** | **~55** |
-| Сентябрь: графы, куча, backtracking, DP, продвинутое | +40 |
-| Октябрь: mock + добор + DP | +25 |
-| **Итого к концу октября** | **~120** |
+| Python-разминка (25.10) | 3 |
+| Паттерны 1–6 + симуляция #1 (26.10–08.11) | ~35 |
+| Списки, деревья, графы, куча (09–22.11) | ~30 |
+| Backtracking + DP + симуляция #2 (23.11–06.12) | ~25 |
+| Продвинутое + mock (07–20.12) | ~15 |
+| **Итого к 20.12** | **~110** |
+| Сессия, секции (до 31.01) | +15–20 |
